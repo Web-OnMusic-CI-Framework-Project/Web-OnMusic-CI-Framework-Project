@@ -1,9 +1,16 @@
 :root{
     --s-yellow: #FAFF00; 
+    --s-pink: #FF0743;
 }
 .border-top{
     border-bottom: .5em solid var(--s-yellow);
 }
 .buttom-primary{
     background-color: var(--s-yellow);
+}
+.text-custom{
+    color: var(--s-yellow);
+}
+.bg-pink-custom{
+    background-color: var(--s-pink);
 }
