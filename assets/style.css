@@ -1,6 +1,7 @@
 :root{
     --s-yellow: #FAFF00; 
     --s-pink: #FF0743;
+    --s-white: #FFFFFF;
 }
 .border-top{
     border-bottom: .5em solid var(--s-yellow);
@@ -11,6 +12,21 @@
 .text-custom{
     color: var(--s-yellow);
 }
+.text-primary-color{
+    color: var(--s-white);
+}
+a.nav-link span.text-primary-color{
+    margin-left: 10px;
+    font-weight: bold;
+}
+.nav-item:hover{
+    background-color: #000000;
+    border-radius: 25px;
+    padding: 10px;
+}
 .bg-pink-custom{
     background-color: var(--s-pink);
+}
+.icon-dashboard-size{
+    width: 30px;
 }
