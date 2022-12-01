@@ -5,8 +5,8 @@
             <nav class="navbar navbar-expand-lg main-navbar">
                 <form class="form-inline mr-auto">
                     <div class="search-element">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
-                        <button class="btn" type="submit"><i class="fa fa-lg fa-search"></i></button>
+                        <input class="form-control" type="search" style="border-radius: 1.2em 0 0 1.2em ;" placeholder="Search data here" aria-label="Search" data-width="250">
+                        <button class="btn" type="submit" style="border-radius: 0 1.2em 1.2em 0 ;"><i class="fa fa-lg fa-search"></i></button>
                         <div class="search-backdrop"></div>
                         <div class="search-result">
                             <div class="search-header">
@@ -29,24 +29,35 @@
                     </div>
                 </form>
                 <div class="navbar-nav navbar-right">
-                    <h6 class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</h6>
+                    <h6 class="d-sm-none d-lg-inline-block text-white">Hi, Ujang Maman</h6>
                 </div>
             </nav>
             <div class="main-sidebar sidebar-style-2 color-style-sidebar">
                 <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand">
-                        <a href="index.html" style="font-size: 2em; color: white; text-transform: none"><span class="text-warning">On</span>Music</a>
+                    <div class="sidebar-brand mb-3">
+                        <div class="row text-left">
+                            <div class="col-3 pl-5 pt-1">
+                                <img src="<?php echo base_url() ?>assets/image/img-logo-onmusic.png" width="40px" />
+                            </div>
+                            <div class="col-7 pl-4">
+                                <a href="index.html" style="font-size: 1.5em; color: white; text-transform: none;"><span class="text-warning">On</span>Music</a>
+                                <p class="text-white" style="line-height: 0; margin-top: -15px"><span class="text-warning">Admin</span>Management</p>
+                            </div>
+                            <div class="col-2 pt-3 pl-0">
+                                <i class="fa fa-2x fa-bars text-white"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
                         <a href="index.html">St</a>
                     </div>
                     <ul class="sidebar-menu mx-3">
-                        <li><a class="nav-link" href="blank.html"><i class="fas fa-home text-white"></i> <span class="text-white">Dashboard</span></a></li>
-                        <li><a class="nav-link" href="credits.html"><i class="fas fa-headphones text-white"></i> <span class="text-white">Data Property Music</span></a></li>
-                        <li><a class="nav-link" href="credits.html"><i class="fas fa-users text-white"></i> <span class="text-white">Data Customer</span></a></li>
-                        <li><a class="nav-link" href="credits.html"><i class="fas fa-money-bill text-white"></i> <span class="text-white">Transaction</span></a></li>
-                        <li><a class="nav-link" href="credits.html"><i class="fas fa-file text-white"></i> <span class="text-white">Report</span></a></li>
-                        <li><a class="nav-link" href="credits.html"><i class="fas fa-sign-out-alt text-white"></i> <span class="text-white">Log-Out</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="blank.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-headphones"></i> <span>Data Property Music</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-users"></i> <span>Data Customer</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-money-bill"></i> <span>Transaction</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-file"></i> <span>Report</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-sign-out-alt"></i> <span>Log-Out</span></a></li>
                     </ul>
                 </aside>
             </div>
