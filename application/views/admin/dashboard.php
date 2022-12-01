@@ -1,79 +1,82 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>Welcome to CodeIgniter</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/bootstrap-5.2.2-dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/style.css">
-</head>
-
-<body>
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-3 d-none d-md-block sidebar vh-100" style="background-image: url(<?php echo base_url() ?>assets/image/background-sidebar.png); background-size: cover;">
-                <div class="px-4">
-                    <div class="sidebar-heading d-flex justify-content-between my-4">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="<?php echo base_url() ?>assets/image/logo.png" style="width:100%">
+            <!-- Main Content -->
+            <div class="main-content">
+                <section class="section px-3">
+                    <div class="section-header">
+                        <h1>Dashboard</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-primary">
+                                    <i class="far fa-user"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Total Admin</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        10
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-6 d-flex justify-content-center align-items-start flex-sm-column pt-2">
-                                <h5 class="fs-3" style="line-height: .5em;"><span class="text-custom">On</span><span class="text-primary-color">Music</span></h5>
-                                <h6><span class="text-custom">Admin</span><span class="text-primary-color">Management</span></h6>
-                            </div>
-                            <div>
-
+                        </div>
+                        <div class="col-lg-5 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-warning">
+                                    <i class="far fa-file"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Reports</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        1,201
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="sidebar-sticky">
-                        <ul class="nav flex-column">
-                            <li class="nav-item rounded-3 my-1 p-1">
-                                <a class="nav-link">
-                                    <img class="icon-dashboard-size" src="<?php echo base_url() .'/assets/image/ic-dashboard.png' ?>" alt="icon dashboard">
-                                    <span class="text-primary-color">Dasboard</span>
-                                </a>
-                            </li>
-                            <li class="nav-item rounded-3 my-1 p-1">
-                                <a class="nav-link">
-                                <img class="icon-dashboard-size" src="<?php echo base_url() .'/assets/image/ic-data-property-music.png' ?>" alt="icon data property music">
-                                    <span class="text-primary-color">Data Property Music</span>
-                                </a>
-                            </li>
-                            <li class="nav-item rounded-3 my-1 p-1">
-                                <a class="nav-link">
-                                <img class="icon-dashboard-size" src="<?php echo base_url() .'/assets/image/ic-data-customer.png' ?>" alt="icon data customer">
-                                    <span class="text-primary-color">Data Customer</span>
-                                </a>
-                            </li>
-                            <li class="nav-item rounded-3 my-1 p-1">
-                                <a class="nav-link">
-                                <img class="icon-dashboard-size" src="<?php echo base_url() .'/assets/image/ic-transaction.png' ?>" alt="icon transaction">
-                                    <span class="text-primary-color">Transaction</span>
-                                </a>
-                            </li>
-                            <li class="nav-item rounded-3 my-1 p-1">
-                                <a class="nav-link">
-                                <img class="icon-dashboard-size" src="<?php echo base_url() .'/assets/image/ic-report.png' ?>" alt="icon report">
-                                    <span class="text-primary-color">Report</span>
-                                </a>
-                            </li>
-                            <li class="nav-item rounded-3 my-1 p-1">
-                                <a class="nav-link">
-                                <img class="icon-dashboard-size" src="<?php echo base_url() .'/assets/image/ic-logout.png' ?>" alt="icon logout">
-                                    <span class="text-primary-color">Log-Out</span>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Statistics</h4>
+                                    <div class="card-header-action">
+                                        <div class="btn">
+                                            <a href="#" class="btn btn-primary">Week</a>
+                                        </div>
+                                        <div class="btn">
+                                            <a href="#" class="btn">Month</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="myChart" height="182"></canvas>
+                                    <div class="statistic-details mt-sm-4">
+                                        <div class="statistic-details-item">
+                                            <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 7%</span>
+                                            <div class="detail-value">$243</div>
+                                            <div class="detail-name">Today's Sales</div>
+                                        </div>
+                                        <div class="statistic-details-item">
+                                            <span class="text-muted"><span class="text-danger"><i class="fas fa-caret-down"></i></span> 23%</span>
+                                            <div class="detail-value">$2,902</div>
+                                            <div class="detail-name">This Week's Sales</div>
+                                        </div>
+                                        <div class="statistic-details-item">
+                                            <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span>9%</span>
+                                            <div class="detail-value">$12,821</div>
+                                            <div class="detail-name">This Month's Sales</div>
+                                        </div>
+                                        <div class="statistic-details-item">
+                                            <span class="text-muted"><span class="text-primary"><i class="fas fa-caret-up"></i></span> 19%</span>
+                                            <div class="detail-value">$92,142</div>
+                                            <div class="detail-name">This Year's Sales</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-</body>
-
-</html>
+                </section>
+            </div>
