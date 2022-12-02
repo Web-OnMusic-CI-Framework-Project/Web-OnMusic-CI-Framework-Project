@@ -1,7 +1,7 @@
             <!-- Main Content -->
             <div class="main-content">
                 <section class="section px-3">
-                    <div class="section-header">
+                    <div class="section-header shadow" style="border-radius: 1.2em;">
                         <h1>Dashboard</h1>
                     </div>
                     <div class="row">
