@@ -21,7 +21,7 @@
                                     <td>1</td>
                                     <td>Name Customer</td>
                                     <td>
-                                        <a href="#" class="badge badge-primary text-white">See Detail</a>
+                                        <a href="#" class="btn btn-sm btn-round btn-primary text-white">See Detail</a>
                                     </td>
                                     <td>
                                         <span class="badge badge-success text-white">Finished</span>
@@ -38,7 +38,7 @@
                                     <td>2</td>
                                     <td>Name Customer</td>
                                     <td>
-                                        <a href="#" class="badge badge-primary text-white">See Detail</a>
+                                        <a href="#" class="btn btn-sm btn-round btn-primary text-white">See Detail</a>
                                     </td>
                                     <td>
                                         <span class="badge badge-info text-white">Renting</span>
