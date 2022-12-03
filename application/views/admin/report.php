@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
                 <form class="form-group">
-                    <label class="font-weight-bold">Form</label>
-                    <input type="date" class="form-control datepicker">
-                    <label class="font-weight-bold">To</label>
-                    <input type="date" class="form-control datepicker">
+                    <label class="font-weight-bold" for="TanggalMulaiSewa">Form</label>
+                    <input type="date" class="form-control datepicker" name="TanggalMulaiSewa">
+                    <label class="font-weight-bold" for="TanggalAkhirSewa">To</label>
+                    <input type="date" class="form-control datepicker" name="TanggalAkhirSewa">
                     <div class="buttons mt-5">
                         <a class="btn btn-lg btn-warning text-dark font-weight-bold" style="border-radius: 1.2em;">Add Customer</a>
                     </div>
