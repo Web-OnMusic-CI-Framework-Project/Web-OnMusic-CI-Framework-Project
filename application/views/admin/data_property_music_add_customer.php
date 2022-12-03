@@ -8,24 +8,24 @@
         <div class="card">
           <div class="card-body">
             <div class="form-group">
-              <label class="font-weight-bold">Name</label>
-              <input type="text" class="form-control">
+              <label class="font-weight-bold" for="Nama">Name</label>
+              <input type="text" class="form-control" name="Nama">
             </div>
             <div class="form-group">
-              <label class="font-weight-bold">Username</label>
-              <input type="text" class="form-control">
+              <label class="font-weight-bold" for="Username">Username</label>
+              <input type="text" class="form-control" name="Username">
             </div>
             <div class="form-group">
-              <label class="font-weight-bold">Password</label>
-              <input type="password" class="form-control" data-indicator="pwindicator">
+              <label class="font-weight-bold" for="Password">Password</label>
+              <input type="password" class="form-control" name="Password" data-indicator="pwindicator">
             </div>
             <div class="form-group">
-              <label class="font-weight-bold">Phone</label>
-              <input type="text" class="form-control phone-number" data-indicator="pwindicator">
+              <label class="font-weight-bold" for="NoTelp">Phone</label>
+              <input type="text" class="form-control phone-number" name="NoTelp" data-indicator="pwindicator">
             </div>
             <div class="form-group">
-              <label class="font-weight-bold">Address</label>
-              <textarea class="form-control"></textarea>
+              <label class="font-weight-bold" for="Alamat">Address</label>
+              <textarea class="form-control" name="Alamat"></textarea>
             </div>
             <div class="form-group mt-5">
               <button type="submit" class="btn btn-lg btn-round btn-warning">Save</button>

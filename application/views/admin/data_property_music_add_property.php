@@ -8,29 +8,29 @@
         <div class="card">
           <div class="card-body">
             <div class="form-group">
-              <label class="font-weight-bold">Name</label>
-              <input type="text" class="form-control">
+              <label class="font-weight-bold" for="Nama">Name</label>
+              <input type="text" class="form-control" name="Nama">
             </div>
             <div class="form-group">
-              <label class="font-weight-bold">Merk</label>
-              <input type="text" class="form-control phone-number">
+              <label class="font-weight-bold" for="Brand">Merk</label>
+              <input type="text" class="form-control phone-number" name="Brand">
             </div>
             <div class="form-group">
-              <label class="font-weight-bold">Price Rent</label>
-              <input type="number" class="form-control pwstrength" data-indicator="pwindicator">
+              <label class="font-weight-bold" for="HargaSewa">Price Rent</label>
+              <input type="number" class="form-control pwstrength" name="HargaSewa" data-indicator="pwindicator">
             </div>
             <div class="form-group">
-              <label class="font-weight-bold">Status</label>
-              <select class="form-control">
+              <label class="font-weight-bold" for="Status">Status</label>
+              <select class="form-control" name="Status">
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
               </select>
             </div>
             <div class="form-group">
-              <label class="font-weight-bold">Image</label>
+              <label class="font-weight-bold" for="Gambar">Image</label>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile">
+                <input type="file" class="custom-file-input" id="customFile" name="Gambar">
                 <label class="custom-file-label" for="customFile">Choose file</label>
               </div>
             </div>
