@@ -3,6 +3,14 @@
         <div class="main-wrapper main-wrapper-1">
             <div class="navbar-bg color-background-navbar"></div>
             <nav class="navbar navbar-expand-lg main-navbar">
+                <div>
+                    <ul class="navbar-nav mr-3">
+                        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fa fa-lg fa-bars text-white"></i></a></li>
+                        <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <!-- <a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fa fa-3x fa-bars text-white"></i> -->
+                <!-- <a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a> -->
                 <form class="form-inline mr-auto">
                     <div class="search-element">
                         <input class="form-control" type="search" style="border-radius: 1.2em 0 0 1.2em ;" placeholder="Search data here" aria-label="Search" data-width="250">
@@ -34,26 +42,21 @@
             </nav>
             <div class="main-sidebar sidebar-style-2 color-style-sidebar">
                 <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand mb-3">
+                    <div class="sidebar-brand">
                         <div class="row text-left">
-                            <div class="col-3 pl-5 pt-1">
+                            <div class="col-md-3 pl-5 pt-1">
                                 <img src="<?php echo base_url() ?>assets/image/img-logo-onmusic.png" width="40px" />
                             </div>
-                            <div class="col-7 pl-4">
+                            <div class="col-md-6 pl-4">
                                 <a href="index.html" style="font-size: 1.5em; color: white; text-transform: none;"><span class="text-warning">On</span>Music</a>
                                 <p class="text-white" style="line-height: 0; margin-top: -15px"><span class="text-warning">Admin</span>Management</p>
                             </div>
-                            <div class="col-2 pt-3 pl-0">
-                                <i class="fa fa-2x fa-bars text-white"></i>
-                            </div>
                         </div>
                     </div>
-                    <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">St</a>
-                    </div>
                     <ul class="sidebar-menu mx-3">
+                        <li></li>
                         <li><a class="nav-link text-dark rounded" href="blank.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
-                        <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-headphones"></i> <span>Data Property Music</span></a></li>
+                        <li class=""><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-headphones"></i> <span>Data Property Music</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-users"></i> <span>Data Customer</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-money-bill"></i> <span>Transaction</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-file"></i> <span>Report</span></a></li>
