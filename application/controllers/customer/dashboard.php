@@ -3,10 +3,9 @@ class Dashboard extends CI_Controller
 {
     public function index()
     {
-        // $this->load->view('templates_customer/header');
-        // $this->load->view('templates_customer/navbar');
-        // $this->load->view('customer/dashboard');
-        // $this->load->view('templates_customer/footer');
-        $this->load->view('login_page');
+        $this->load->view('templates_customer/header');
+        $this->load->view('templates_customer/navbar');
+        $this->load->view('customer/dashboard');
+        $this->load->view('templates_customer/footer');
     }
 }
