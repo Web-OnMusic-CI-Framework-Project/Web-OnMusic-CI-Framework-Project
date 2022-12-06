@@ -16,12 +16,16 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/assets_stisla/css/components.css">
 
     <style>
-        .color-background-navbar {
-            background-color: #FF0743;
+        .bg-color-navbar {
+            background-image: linear-gradient(to right, #FF0642, #FB0D68, #C60C7D, #BB137E);
         }
 
-        .color-style-sidebar {
-            background-image: linear-gradient(#FF0642 75%, #FB0D68, #C60C7D, #BB137E);
+        .bg-color-footer {
+            background-image: linear-gradient(#FF0642, #FB0D68, #C60C7D, #BB137E);
+        }
+
+        .bg-color-product {
+            background-image: linear-gradient(to right, #FF0642, #FB0D68, #C60C7D, #BB137E);
         }
     </style>
     <!-- Start GA -->
