@@ -7,10 +7,10 @@
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
                     <div class="buttons">
-                        <a class="btn btn-lg btn-warning text-dark font-weight-bold" style="border-radius: 1.2em;">Add Property</a>
                     </div>
-                    <div class="card-body p-0">
+                    <div class="card-body p-3">
                         <div class="table-responsive">
+                            <a class="btn btn-lg btn-warning text-dark font-weight-bold mb-3" style="border-radius: 1.2em;">Add Property</a>
                             <table class="table table-bordered table-md text-center">
                                 <thead>
                                     <th>No</th>
