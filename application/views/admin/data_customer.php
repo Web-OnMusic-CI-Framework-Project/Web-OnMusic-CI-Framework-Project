@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-body p-0">
                         <div class="table-responsive p-3">
-                            <a class="btn btn-lg btn-warning text-dark font-weight-bold mb-3" href="<?php echo base_url('admin/data_property_music_add_customer') ?>" style="border-radius: 1.2em;">Add Customer</a>
+                            <a class="btn btn-lg btn-warning text-dark font-weight-bold mb-3" href="<?php echo base_url('admin/data_customer/data_property_music_add_customer') ?>" style="border-radius: 1.2em;">Add Customer</a>
                             <table class="table table-bordered table-md text-center">
                                 <thead>
                                     <th>No</th>
@@ -23,15 +23,17 @@
                                     $no = 1;
                                     foreach ($user as $us) :
                                     ?>
-                                        <td><?php echo $no++ ?></td>
-                                        <td><?php echo $us->Nama ?></td>
-                                        <td><?php echo $us->Username ?></td>
-                                        <td><?php echo $us->Alamat ?></td>
-                                        <td><?php echo $us->NoTelp ?></td>
-                                        <td>
-                                            <a class="btn btn-primary"><i class="fa fa-lg fa-file-alt text-white"></i></a>
-                                            <a class="btn btn-danger"><i class="fa fa-lg fa-trash-alt text-white"></i></a>
-                                        </td>
+                                        <tr>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php echo $us->Nama ?></td>
+                                            <td><?php echo $us->Username ?></td>
+                                            <td><?php echo $us->Alamat ?></td>
+                                            <td><?php echo $us->NoTelp ?></td>
+                                            <td>
+                                                <a class="btn btn-primary"><i class="fa fa-lg fa-file-alt text-white"></i></a>
+                                                <a class="btn btn-danger"><i class="fa fa-lg fa-trash-alt text-white"></i></a>
+                                            </td>
+                                        </tr>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
