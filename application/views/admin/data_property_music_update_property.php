@@ -62,7 +62,6 @@
                         </div>
                     </form>
                 <?php endforeach ?>
-                <div class="h1">haiiiii</div>
             </div>
         </div>
     </section>
