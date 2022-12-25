@@ -31,15 +31,15 @@
                                             <td>
                                                 <?php
                                                 if ($amj->Status == "0") {
-                                                    echo "<span class='badge badge-success'>Available</span>";
-                                                } else {
                                                     echo "<span class='badge badge-danger'>Unavailable</span>";
+                                                } else {
+                                                    echo "<span class='badge badge-success'>Available</span>";
                                                 }
                                                 ?>
                                             </td>
                                             <td>
-                                                <a href="<?php echo base_url('admin/data_property_music/see_data/') . $amj->id_alat_musik_jasa ?>" class="btn btn-success"><i class="fa fa-eye text-white"></i></a>
-                                                <a href="<?php echo base_url('admin/data_property_music/delete_data/') . $amj->id_alat_musik_jasa ?>" class="btn btn-danger"><i class="fa fa-trash-alt text-white"></i></a>
+                                                <a href="<?php echo base_url('admin/data_property_music/detail_property/') . $amj->id_alat_musik_jasa ?>" class="btn btn-success"><i class="fa fa-eye text-white"></i></a>
+                                                <a href="<?php echo base_url('admin/data_property_music/delete_property/') . $amj->id_alat_musik_jasa ?>" class="btn btn-danger"><i class="fa fa-trash-alt text-white"></i></a>
                                                 <a href="<?php echo base_url('admin/data_property_music/update_data/') . $amj->id_alat_musik_jasa ?>" class="btn btn-primary"><i class="fa fa-file-alt text-white"></i></a>
                                             </td>
                                         </tr>
