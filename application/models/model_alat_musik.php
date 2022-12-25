@@ -16,4 +16,20 @@ class Model_Alat_Musik extends CI_model
     {
         $this->db->update($table, $data, $where);
     }
+
+    public function delete_property($where, $table)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+
+    public function ambil_id($id)
+    {
+        $hasil = $this->db->where('id_alat_musik_jasa', $id)->get('alatmusikjasa');
+        if ($hasil->num_rows() > 0) {
+            return $hasil->result();
+        } else {
+            return false;
+        }
+    }
 }
