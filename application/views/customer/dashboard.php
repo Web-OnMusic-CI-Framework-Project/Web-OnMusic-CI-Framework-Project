@@ -11,51 +11,30 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100 bg-color-product" style="border-radius: 1.5em;">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." style="border-radius: 1.5em;" />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-white">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $120.00 - $280.00
+                    <?php foreach ($alatmusikjasa as $amj) : ?>
+                        <div class="col-md-4 mb-5">
+                            <div class="card h-100 bg-color-product" style="border-radius: 1.5em;">
+                                <!-- Product image-->
+                                <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." style="border-radius: 1.5em;" />
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center text-white">
+                                        <!-- Product name-->
+                                        <h5 class="fw-bolder"><?php echo $amj->Nama ?>
+                                            <!-- Status Product-->
+                                            <?php if ($amj->Status == 0) {
+                                                echo "<span class='badge badge-danger'>Unavailable</span>";
+                                            } else {
+                                                echo "<span class='badge badge-success'>Available</span>";
+                                            } ?>
+                                        </h5>
+                                        <!-- Product price-->
+                                        <?php echo $amj->HargaSewa ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100 bg-color-product" style="border-radius: 1.5em;">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." style="border-radius: 1.5em;" />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-white">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $120.00 - $280.00
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <div class="card h-100 bg-color-product" style="border-radius: 1.5em;">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." style="border-radius: 1.5em;" />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center text-white">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">Fancy Product</h5>
-                                    <!-- Product price-->
-                                    $120.00 - $280.00
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
             </div>
         </section>
