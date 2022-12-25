@@ -69,6 +69,7 @@ class Data_Property_Music extends CI_Controller
         WHERE amj.kode_type = tp.kode_type 
         AND amj.id_alat_musik_jasa ='$id'")->result();
         $data['type'] = $this->model_alat_musik->get_data('type')->result();
+
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/data_property_music_update_property', $data);
@@ -83,18 +84,19 @@ class Data_Property_Music extends CI_Controller
             $this->update_data();
         } else {
             $id                 = $this->input->post('id_alat_musik_jasa');
+            $kode_type          = $this->input->post('kode_type');
             $Nama               = $this->input->post('Nama');
             $Brand              = $this->input->post('Brand');
             $HargaSewa          = $this->input->post('HargaSewa');
             $Status             = $this->input->post('Status');
-            $Gambar               = $_FILES['gambar']['name'];
+            $Gambar             = $_FILES['gambar']['name'];
             if ($Gambar) {
                 $config['upload_path']     = './assets/upload';
                 $config['allowed_types']   = 'jpg|jpeg|png|tiff';
 
                 $this->load->library('upload', $config);
 
-                if (!$this->upload->do_upload('Gambar')) {
+                if ($this->upload->do_upload('Gambar')) {
                     $Gambar = $this->upload->data('file_name');
                     $this->db->set('Gambar', $Gambar);
                 } else {
@@ -103,6 +105,7 @@ class Data_Property_Music extends CI_Controller
             }
 
             $data = array(
+                'kode_type'             => $kode_type,
                 'Nama'                  => $Nama,
                 'Brand'                 => $Brand,
                 'HargaSewa'             => $HargaSewa,
@@ -118,6 +121,7 @@ class Data_Property_Music extends CI_Controller
             Data Alat Musik Berhasil Diupdate!.
             <button type="butoon" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
+            </button>
             </div>');
             redirect('admin/data_property_music');
         }
@@ -130,5 +134,27 @@ class Data_Property_Music extends CI_Controller
         $this->form_validation->set_rules('HargaSewa', 'Price Rent', 'required');
         $this->form_validation->set_rules('Status', 'Status', 'required');
         $this->form_validation->set_rules('Gambar', 'Gambar', 'required');
+    }
+
+    public function detail_property($id)
+    {
+        $data['detail'] = $this->model_alat_musik->ambil_id($id);
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/detail_property', $data);
+        $this->load->view('templates_admin/footer');
+    }
+
+    public function delete_property($id)
+    {
+        $where = array('id_alat_musik_jasa' => $id);
+        $this->model_alat_musik->delete_property($where, 'alatmusikjasa');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Data Alat Musik Berhasil Dihapus!.
+        <button type="butoon" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>');
+        redirect('admin/data_property_music');
     }
 }
