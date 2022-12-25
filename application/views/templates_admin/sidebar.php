@@ -56,7 +56,8 @@
                     <ul class="sidebar-menu mx-3">
                         <li></li>
                         <li><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/dashboard') ?>"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
-                        <li class=""><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/data_property_music') ?>"><i class="fas fa-headphones"></i> <span>Data Property Music</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/data_property_music') ?>"><i class="fas fa-headphones"></i> <span>Data Property Music</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/data_type') ?>"><i class="fas fa-headphones"></i> <span>Data Type</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/data_customer') ?>"><i class="fas fa-users"></i> <span>Data Customer</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/transaction') ?>"><i class="fas fa-money-bill"></i> <span>Transaction</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/report') ?>"><i class="fas fa-file"></i> <span>Report</span></a></li>

@@ -11,7 +11,7 @@
                             <a class="btn btn-lg btn-warning text-dark font-weight-bold mb-3" href="<?php echo base_url('admin/data_customer/data_property_music_add_customer') ?>" style="border-radius: 1.2em;">Add Customer</a>
                             <table class="table table-bordered table-md text-center">
                                 <thead>
-                                    <th>No</th>
+                                    <th width="20">No</th>
                                     <th>Name</th>
                                     <th>Username</th>
                                     <th>Address</th>
