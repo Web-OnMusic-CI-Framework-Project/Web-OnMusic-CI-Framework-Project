@@ -100,9 +100,9 @@ class Data_Type extends CI_Controller
     {
         $this->form_validation->set_rules('kode_type', 'Kode Type', 'required');
         $this->form_validation->set_rules('nama_type', 'Nama Type', 'required');
-        $this->load->view('templates_admin/header');
-        $this->load->view('templates_admin/sidebar');
-        $this->load->view('admin/form_tambah_type');
-        $this->load->view('templates_admin/footer');
+        // $this->load->view('templates_admin/header');
+        // $this->load->view('templates_admin/sidebar');
+        // $this->load->view('admin/form_tambah_type');
+        // $this->load->view('templates_admin/footer');
     }
 }

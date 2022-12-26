@@ -9,7 +9,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="<?php echo base_url() . 'assets/upload/.$dt->Gambar' ?>" alt="">
+                        <img class="w-100" src="<?php echo base_url() . 'assets/upload/' . $dt->Gambar ?>" alt="">
                     </div>
                     <div class="col-md-7">
                         <table class="table">

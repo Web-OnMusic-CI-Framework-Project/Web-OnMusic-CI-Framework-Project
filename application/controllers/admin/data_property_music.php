@@ -65,11 +65,7 @@ class Data_Property_Music extends CI_Controller
     public function update_data($id)
     {
         $where = array('id_alat_musik_jasa' => $id);
-        $data['alatmusikjasa'] = $this->db->query("SELECT * FROM alatmusikjasa amj, type tp 
-        WHERE amj.kode_type = tp.kode_type 
-        AND amj.id_alat_musik_jasa ='$id'")->result();
-        $data['type'] = $this->model_alat_musik->get_data('type')->result();
-
+        $data['alatmusikjasa'] = $this->db->query("SELECT * FROM alatmusikjasa WHERE id_alat_musik_jasa='$id'")->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/data_property_music_update_property', $data);
@@ -84,7 +80,6 @@ class Data_Property_Music extends CI_Controller
             $this->update_data();
         } else {
             $id                 = $this->input->post('id_alat_musik_jasa');
-            $kode_type          = $this->input->post('kode_type');
             $Nama               = $this->input->post('Nama');
             $Brand              = $this->input->post('Brand');
             $HargaSewa          = $this->input->post('HargaSewa');
@@ -105,11 +100,11 @@ class Data_Property_Music extends CI_Controller
             }
 
             $data = array(
-                'kode_type'             => $kode_type,
                 'Nama'                  => $Nama,
                 'Brand'                 => $Brand,
                 'HargaSewa'             => $HargaSewa,
                 'Status'                => $Status,
+                'Gambar'                => $Gambar
             );
 
             $where = array(
