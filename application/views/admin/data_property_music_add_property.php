@@ -7,37 +7,43 @@
       <div class="col-12 col-md-12 col-lg-12">
         <div class="card">
           <div class="card-body">
-            <div class="form-group">
-              <label class="font-weight-bold" for="Nama">Name</label>
-              <input type="text" class="form-control" name="Nama">
-            </div>
-            <div class="form-group">
-              <label class="font-weight-bold" for="Brand">Merk</label>
-              <input type="text" class="form-control phone-number" name="Brand">
-            </div>
-            <div class="form-group">
-              <label class="font-weight-bold" for="HargaSewa">Price Rent</label>
-              <input type="number" class="form-control pwstrength" name="HargaSewa" data-indicator="pwindicator">
-            </div>
-            <div class="form-group">
-              <label class="font-weight-bold" for="Status">Status</label>
-              <select class="form-control" name="Status">
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="font-weight-bold" for="Gambar">Image</label>
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile" name="Gambar">
-                <label class="custom-file-label" for="customFile">Choose file</label>
+            <form method="POST" action="<?php echo base_url('admin/data_property_music/add_property_music') ?>" enctype="multipart/form-data">
+              <div class="form-group">
+                <label class="font-weight-bold" for="Nama">Name</label>
+                <input type="text" class="form-control" name="Nama">
+                <?php echo form_error('Nama', '<div class="text-small text-danger">', '</div>') ?>
               </div>
-            </div>
-            <div class="form-group mt-5">
-              <button type="submit" class="btn btn-lg btn-round btn-warning">Save</button>
-              <button type="submit" class="btn btn-lg btn-round border-warning">Reset</button>
-            </div>
+              <div class="form-group">
+                <label class="font-weight-bold" for="Brand">Merk</label>
+                <input type="text" class="form-control phone-number" name="Brand">
+                <?php echo form_error('Brand', '<div class="text-small text-danger">', '</div>') ?>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold" for="HargaSewa">Price Rent</label>
+                <input type="number" class="form-control pwstrength" name="HargaSewa" data-indicator="pwindicator">
+                <?php echo form_error('HargaSewa', '<div class="text-small text-danger">', '</div>') ?>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold" for="Status">Status</label>
+                <select class="form-control" name="Status">
+                  <option>-Set Status-</option>
+                  <option value="1">Available</option>
+                  <option value="0">Unavailable</option>
+                </select>
+                <?php echo form_error('Status', '<div class="text-small text-danger">', '</div>') ?>
+              </div>
+              <div class="form-group">
+                <label class="font-weight-bold" for="Gambar">Image</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="customFile" name="Foto">
+                  <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
+              </div>
+              <div class="form-group mt-5">
+                <button type="submit" class="btn btn-lg btn-round btn-warning">Save</button>
+                <button type="reset" class="btn btn-lg btn-round border-warning">Reset</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
