@@ -58,7 +58,7 @@
                         <li><a class="nav-link text-dark rounded" href="blank.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
                         <li class=""><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-headphones"></i> <span>Data Property Music</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-users"></i> <span>Data Customer</span></a></li>
-                        <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-money-bill"></i> <span>Transaction</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="<?php echo base_url() .'admin/transaction' ?>"><i class="fas fa-money-bill"></i> <span>Transaction</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-file"></i> <span>Report</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="credits.html"><i class="fas fa-sign-out-alt"></i> <span>Log-Out</span></a></li>
                     </ul>
