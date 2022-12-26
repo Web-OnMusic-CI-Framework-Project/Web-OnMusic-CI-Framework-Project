@@ -42,11 +42,41 @@
                                         <a class="btn btn-round btn-success text-white">See Detail</a>
                                     </td>
                                 </tr>
+
+                                <?php 
+                                $no = 1;
+                                $totalPayment = 0;
+                                foreach($transaction as $tr) : ?>
+
+                                <?php 
+                                $properties  = $data_properties;
+                                $items = explode(", ", $properties);
+
+                                    foreach($items as $item) : ?>
+
+                                        <?php if($tr->id_property == $item) { ?>
+
+                                        <tr>
+                                            <td><?php echo $no++?></td>
+                                            <td><?php echo $tr->gambar?></td>
+                                            <td><?php echo $tr->nama_property?></td>
+                                            <td>Rp<?php echo $tr->harga_sewa?></td>
+                                            <td>
+                                                <a class="btn btn-round btn-success text-white">See Detail</a>
+                                            </td>
+
+                                            <?php $totalPayment += $tr->harga_sewa?>
+                                        </tr>
+
+                                        <?php } ?>
+
+                                    <?php endforeach; ?>
+                                <?php endforeach; ?>
                             </table>
                         </div>
                     </div>
                     <div class="text-right font-weight-bold p-5">
-                        Total Payment : xx.xxx.xxx
+                        Total Payment : Rp<?php echo $totalPayment?>
                     </div>
                 </div>
             </div>
