@@ -60,7 +60,7 @@
                                             <td><?php echo $no++?></td>
                                             <td><?php echo $tr->gambar?></td>
                                             <td><?php echo $tr->nama_property?></td>
-                                            <td>Rp<?php echo $tr->harga_sewa?></td>
+                                            <td>Rp<?php echo number_format($tr->harga_sewa, 0, ',', '.')?></td>
                                             <td>
                                                 <a class="btn btn-round btn-success text-white">See Detail</a>
                                             </td>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="text-right font-weight-bold p-5">
-                        Total Payment : Rp<?php echo $totalPayment?>
+                        Total Payment : Rp<?php echo number_format($totalPayment, 0, ',', '.')?>
                     </div>
                 </div>
             </div>
