@@ -42,11 +42,41 @@
                                         <a class="btn btn-round btn-success text-white">See Detail</a>
                                     </td>
                                 </tr>
+
+                                <?php 
+                                $no = 1;
+                                $totalPayment = 0;
+                                foreach($properties as $pr) : ?>
+
+                                <?php 
+                                $properties  = $data_properties;
+                                $items = explode(", ", $properties);
+
+                                    foreach($items as $item) : ?>
+
+                                        <?php if($pr->id_property == $item) { ?>
+
+                                        <tr>
+                                            <td><?php echo $no++?></td>
+                                            <td><?php echo $pr->gambar?></td>
+                                            <td><?php echo $pr->nama_property?></td>
+                                            <td>Rp<?php echo number_format($pr->harga_sewa, 0, ',', '.')?></td>
+                                            <td>
+                                                <a class="btn btn-round btn-success text-white">See Detail</a>
+                                            </td>
+
+                                            <?php $totalPayment += $pr->harga_sewa?>
+                                        </tr>
+
+                                        <?php } ?>
+
+                                    <?php endforeach; ?>
+                                <?php endforeach; ?>
                             </table>
                         </div>
                     </div>
                     <div class="text-right font-weight-bold p-5">
-                        Total Payment : xx.xxx.xxx
+                        Total Payment : Rp<?php echo number_format($totalPayment, 0, ',', '.')?>
                     </div>
                 </div>
             </div>

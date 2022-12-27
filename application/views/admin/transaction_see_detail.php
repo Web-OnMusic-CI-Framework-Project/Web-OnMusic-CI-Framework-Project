@@ -46,7 +46,7 @@
                                 <?php 
                                 $no = 1;
                                 $totalPayment = 0;
-                                foreach($transaction as $tr) : ?>
+                                foreach($properties as $pr) : ?>
 
                                 <?php 
                                 $properties  = $data_properties;
@@ -54,18 +54,18 @@
 
                                     foreach($items as $item) : ?>
 
-                                        <?php if($tr->id_property == $item) { ?>
+                                        <?php if($pr->id_alat_musik_jasa == $item) { ?>
 
                                         <tr>
                                             <td><?php echo $no++?></td>
-                                            <td><?php echo $tr->gambar?></td>
-                                            <td><?php echo $tr->nama_property?></td>
-                                            <td>Rp<?php echo number_format($tr->harga_sewa, 0, ',', '.')?></td>
+                                            <td><?php echo $pr->Gambar?></td>
+                                            <td><?php echo $pr->Nama?></td>
+                                            <td>Rp<?php echo number_format($pr->HargaSewa, 0, ',', '.')?></td>
                                             <td>
                                                 <a class="btn btn-round btn-success text-white">See Detail</a>
                                             </td>
 
-                                            <?php $totalPayment += $tr->harga_sewa?>
+                                            <?php $totalPayment += $pr->HargaSewa?>
                                         </tr>
 
                                         <?php } ?>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="text-right font-weight-bold p-5">
-                        Total Payment : Rp<?php echo number_format($totalPayment, 0, ',', '.')?>
+                        Total Payment : Rp<?php echo number_format($totalPayment, 0, ',', '.')?> (Untuk sementara belum diambil dari db untuk TotalHarga, karena biar nilainya dinamis, pake perkalian biasa dulu :v )
                     </div>
                 </div>
             </div>
