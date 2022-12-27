@@ -8,7 +8,7 @@
         <div class="card">
           <div class="card-body">
             <?php foreach ($type as $tp) : ?>
-            <form method="POST" action="<?php echo base_url('admin/data_type/update_type_action') ?>">
+            <form method="POST" action="<?php echo base_url('admin/data_type/update_type_action/') . $tp->id_type ?>">
             <div class="form-group">
                 <label>Kode Type</label>
                 <input type="hidden" name="id_type" value="<?php echo $tp->id_type ?>">

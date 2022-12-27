@@ -53,12 +53,12 @@ class Data_Type extends CI_Controller
         $this->load->view('templates_admin/footer');
     }
 
-    public function update_type_action()
+    public function update_type_action($id)
     {
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update_type();
+            $this->update_type($id);
         } else {
             $id_type                  = $this->input->post('id_type');
             $kode_type                = $this->input->post('kode_type');

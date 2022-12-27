@@ -32,29 +32,31 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
                 <?php foreach ($alatmusikjasa as $amj) : ?>
                     <div class="col-md-4 mb-5">
-                        <div class="card h-100 bg-color-product shadow" style="border-radius: 1.5em;">
-                            <!-- Product image-->
-                            <img class="card-img-top p-1" src="<?php echo base_url() . 'assets/upload/' . $amj->Gambar ?>" alt="..." style="border-radius: 1.5em;" />
-                            <!-- Product details-->
-                            <div class="card-body p-3">
-                                <div class="text-center text-white">
-                                    <!-- Status Product-->
-                                    <span>
-                                        <?php if ($amj->Status == 0) {
-                                            echo "<span class='badge badge-danger'>Unavailable</span>";
-                                        } else {
-                                            echo "<span class='badge badge-success'>Available</span>";
-                                        } ?>
-                                    </span>
-                                    <!-- Product name-->
-                                    <h4 class="h4"><?php echo $amj->Nama ?></h4>
-                                    <!-- Product price-->
-                                    <span class="h2 fw-bolder">
-                                        <?php echo $amj->HargaSewa ?>/day
-                                    </span>
+                        <a href="<?php echo base_url('customer/dashboard/checkout/') . $amj->id_alat_musik_jasa ?>">   
+                            <div class="card h-100 bg-color-product shadow" style="border-radius: 1.5em;">
+                                <!-- Product image-->
+                                <img class="card-img-top p-1" src="<?php echo base_url() . 'assets/upload/' . $amj->Gambar ?>" alt="..." style="border-radius: 1.5em;" />
+                                <!-- Product details-->
+                                <div class="card-body p-3">
+                                    <div class="text-center text-white">
+                                        <!-- Status Product-->
+                                        <span>
+                                            <?php if ($amj->Status == 0) {
+                                                echo "<span class='badge badge-danger'>Unavailable</span>";
+                                            } else {
+                                                echo "<span class='badge badge-success'>Available</span>";
+                                            } ?>
+                                        </span>
+                                        <!-- Product name-->
+                                        <h4 class="h4"><?php echo $amj->Nama ?></h4>
+                                        <!-- Product price-->
+                                        <span class="h2 fw-bolder">
+                                            Rp <?php echo $amj->HargaSewa ?>/day
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 <?php endforeach ?>
             </div>
