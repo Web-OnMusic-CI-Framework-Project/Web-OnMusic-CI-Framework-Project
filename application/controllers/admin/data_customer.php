@@ -106,6 +106,20 @@ class Data_Customer extends CI_Controller
         }
     }
 
+    public function delete_data($id)
+    {
+        $where = array('id_user'=>$id);
+
+        $this->data_user->delete_data('user', $where);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Data User Berhasil Hapus!.
+        <button type="buton" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>');
+        redirect('admin/data_customer');
+    }
+
     public function _rules()
     {
         $this->form_validation->set_rules('Nama', 'Nama', 'required');

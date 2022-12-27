@@ -21,10 +21,9 @@ class Data_User extends CI_Model{
         $this->db->update($table, $data, $where);
     }
 
-    public function delete_property($where, $table)
+    public function delete_data($table, $where)
     {
-        $this->db->where($where);
-        $this->db->delete($table);
+        $this->db->delete($table, $where);
     }
 
     public function ambil_id($id)
