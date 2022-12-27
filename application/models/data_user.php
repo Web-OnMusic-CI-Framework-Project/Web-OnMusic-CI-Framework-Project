@@ -6,6 +6,11 @@ class Data_User extends CI_Model{
         return $this->db->get($table);
     }
     
+    public function get_data_where($table, $where)
+    {
+        return $this->db->get_where($table, $where);
+    }
+
     public function insert_data($data, $table)
     {
         $this->db->insert($table, $data);
@@ -24,7 +29,7 @@ class Data_User extends CI_Model{
 
     public function ambil_id($id)
     {
-        $hasil = $this->db->where('id_alat_musik_jasa', $id)->get('alatmusikjasa');
+        $hasil = $this->db->where('id_user', $id)->get('user');
         if ($hasil->num_rows() > 0) {
             return $hasil->result();
         } else {

@@ -33,8 +33,8 @@
                                             <td><?php echo $us->Alamat ?></td>
                                             <td><?php echo $us->NoTelp ?></td>
                                             <td>
-                                                <a href="<?php echo base_url('admin/data_customer/update_data') . $us->id_user ?>" class="btn btn-primary"><i class="fa fa-lg fa-pen-alt text-white"></i></a>
-                                                <a href="<?php echo base_url('admin/data_customer/delete_data') . $us->id_user ?>" class="btn btn-danger"><i class="fa fa-lg fa-trash-alt text-white"></i></a>
+                                                <a href="<?php echo base_url('admin/data_customer/update_data/') . $us->id_user ?>" class="btn btn-primary"><i class="fa fa-lg fa-pen-alt text-white"></i></a>
+                                                <a href="<?php echo base_url('admin/data_customer/delete_data/') . $us->id_user ?>" class="btn btn-danger"><i class="fa fa-lg fa-trash-alt text-white"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
