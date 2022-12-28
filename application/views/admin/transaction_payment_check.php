@@ -54,18 +54,18 @@
 
                                     foreach($items as $item) : ?>
 
-                                        <?php if($pr->id_property == $item) { ?>
+                                        <?php if($pr->id_alat_musik_jasa == $item) { ?>
 
                                         <tr>
                                             <td><?php echo $no++?></td>
-                                            <td><?php echo $pr->gambar?></td>
-                                            <td><?php echo $pr->nama_property?></td>
-                                            <td>Rp<?php echo number_format($pr->harga_sewa, 0, ',', '.')?></td>
+                                            <td><?php echo $pr->Gambar?></td>
+                                            <td><?php echo $pr->Nama?></td>
+                                            <td>Rp<?php echo number_format($pr->HargaSewa, 0, ',', '.')?></td>
                                             <td>
                                                 <a class="btn btn-round btn-success text-white">See Detail</a>
                                             </td>
 
-                                            <?php $totalPayment += $pr->harga_sewa?>
+                                            <?php $totalPayment += $pr->HargaSewa?>
                                         </tr>
 
                                         <?php } ?>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="text-right font-weight-bold p-5">
-                        Total Payment : Rp<?php echo number_format($totalPayment, 0, ',', '.')?>
+                        Total Payment : Rp<?php echo number_format($totalPayment, 0, ',', '.')?> (Untuk sementara belum diambil dari db untuk TotalHarga, karena biar nilainya dinamis, pake perkalian biasa dulu :v )
                     </div>
                 </div>
             </div>
@@ -95,7 +95,15 @@
                                 </label>
                             </div>
                             <button class="btn btn-success">Save</button>
-                            <p class="mt-4 bb">Have not payed yet? <a href="#" class="font-weight-bold">Contact Them Here</a></p>
+
+                            <?php 
+
+                                $phone='+6281774937612';
+                                $url='https://wa.me/'.$phone.'/?text=Saya%20ingin%20memastikan%20apakah%20anda%20sudah%20melampirkan%20bukti%20pembayaran?';
+
+                            ?>
+
+                            <p class="mt-4 bb">Have not payed yet? <a href="<?php echo $url ?>" class="font-weight-bold" target="_blank">Contact Them Here</a></p>
                         </div>
                     </div>
                 </div>

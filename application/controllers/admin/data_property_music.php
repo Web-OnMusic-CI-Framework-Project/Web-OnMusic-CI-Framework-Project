@@ -134,6 +134,8 @@ class Data_Property_Music extends CI_Controller
     public function detail_property($id)
     {
         $data['detail'] = $this->model_alat_musik->ambil_id($id);
+        $data['back_to_transaction'] = $this->input->post('back-to-transaction');
+
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/detail_property', $data);

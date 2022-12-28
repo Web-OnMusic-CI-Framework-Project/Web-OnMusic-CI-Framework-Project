@@ -46,14 +46,14 @@
                             </tr>
                             <tr>
                                 <td>Harga Sewa</td>
-                                <td><?php echo $dt->HargaSewa ?></td>
+                                <td>Rp<?php echo number_format($dt->HargaSewa, 0, ',', '.') ?></td>
                             </tr>
                             <tr>
                                 <td>Brand</td>
                                 <td><?php echo $dt->Brand ?></td>
                             </tr>
                         </table>
-                        <a href="<?php echo base_url('admin/data_property_music') ?>" class="btn btn-sm btn-warning ml-4">Kembali</a>
+                        <a href="<?php echo $back_to_transaction == 'back_to_transaction' ? base_url('admin/transaction') : base_url('admin/data_property_music') ?>" class="btn btn-sm btn-warning ml-4">Kembali</a>
                         <a href="<?php echo base_url('admin/data_property_music/update_data/' . $dt->id_alat_musik_jasa) ?>" class="btn btn-sm border-primary">Update</a>
                     </div>
                 </div>

@@ -19,4 +19,15 @@ class Transaction_See_Detail extends CI_Controller
         $this->load->view('admin/transaction_see_detail', $data);
         $this->load->view('templates_admin/footer');
     }
+
+    public function detail_property($id)
+    {
+        $data['detail'] = $this->model_alat_musik->ambil_id($id);
+        $data['back_to_transaction'] = $this->input->post('back-to-transaction');
+
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/detail_property', $data);
+        $this->load->view('templates_admin/footer');
+    }
 }
