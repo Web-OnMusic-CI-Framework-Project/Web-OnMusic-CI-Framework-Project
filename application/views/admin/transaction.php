@@ -18,40 +18,7 @@
                                     <th>Action</th>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Name Customer</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-round btn-primary text-white">See Detail</a>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-success text-white">Finished</span>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-primary"><i class="fa fa-lg fa-check-circle text-white"></i></a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-success"><i class="fa fa-lg fa-check text-white"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-lg fa-times text-white"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Name Customer</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-round btn-primary text-white">See Detail</a>
-                                    </td>
-                                    <td>
-                                        <span class="badge badge-info text-white">Renting</span>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-danger"><i class="fa fa-lg fa-times-circle text-white"></i></a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-success"><i class="fa fa-lg fa-check text-white"></i></a>
-                                        <a class="btn btn-danger"><i class="fa fa-lg fa-times text-white"></i></a>
-                                    </td>
-                                </tr>
-
+                                    
                                 <?php $no = 1;
                                 foreach($transaction as $tr) : ?>
 

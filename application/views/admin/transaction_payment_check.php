@@ -16,32 +16,6 @@
                                     <th>Price Rent</th>
                                     <th>Action</th>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <img src="<?php echo base_url() ?>assets/image/img-logo-onmusic.png" width="50" />
-                                    </td>
-                                    <td>Name</td>
-                                    <td>
-                                        Price Rent
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-round btn-success text-white">See Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>
-                                        <img src="<?php echo base_url() ?>assets/image/img-logo-onmusic.png" width="50" />
-                                    </td>
-                                    <td>Name</td>
-                                    <td>
-                                        Price Rent
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-round btn-success text-white">See Detail</a>
-                                    </td>
-                                </tr>
 
                                 <?php 
                                 $no = 1;
