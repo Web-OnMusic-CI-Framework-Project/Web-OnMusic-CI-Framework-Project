@@ -33,7 +33,7 @@
             <div class="form-group">
               <label class="font-weight-bold" for="NoTelp">Phone</label>
               <input type="text" class="form-control phone-number" name="NoTelp" data-indicator="pwindicator">
-              <?php echo form_error('Phone', '<div class="text-small text-danger">', '</div>') ?>
+              <?php echo form_error('NoTelp', '<div class="text-small text-danger">', '</div>') ?>
             </div>
             <div class="form-group">
               <label class="font-weight-bold" for="Alamat">Address</label>
