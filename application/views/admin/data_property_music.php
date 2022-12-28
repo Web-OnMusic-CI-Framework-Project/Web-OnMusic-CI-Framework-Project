@@ -36,7 +36,7 @@
                                     <td>
                                         <a href="<?php echo base_url('admin/data_property_music/detail_property/') . $amj->id_alat_musik_jasa ?>" class="btn btn-success"><i class="fa fa-eye text-white"></i></a>
                                         <a href="<?php echo base_url('admin/data_property_music/delete_property/') . $amj->id_alat_musik_jasa ?>" class="btn btn-danger"><i class="fa fa-trash-alt text-white"></i></a>
-                                        <a href="<?php echo base_url('admin/data_property_music/update_data/') . $amj->id_alat_musik_jasa ?>" class="btn btn-primary"><i class="fa fa-file-alt text-white"></i></a>
+                                        <a href="<?php echo base_url('admin/data_property_music/update_data/') . $amj->id_alat_musik_jasa ?>" class="btn btn-primary"><i class="fa fa-pen-alt text-white"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach ?>

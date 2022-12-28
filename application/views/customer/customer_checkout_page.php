@@ -16,28 +16,20 @@
                                     <th>Price Rent/day</th>
                                     <th>Action</th>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <img src="<?php echo base_url() ?>assets/image/img-logo-onmusic.png" width="50" />
-                                    </td>
-                                    <td>Name Property</td>
-                                    <td>Price Property</td>
-                                    <td>
-                                        <a class="btn btn-round btn-danger text-white">Remove</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>
-                                        <img src="<?php echo base_url() ?>assets/image/img-logo-onmusic.png" width="50" />
-                                    </td>
-                                    <td>Name Property</td>
-                                    <td>Price Property</td>
-                                    <td>
-                                        <a class="btn btn-round btn-danger text-white">Remove</a>
-                                    </td>
-                                </tr>
+                                <?php foreach ($detail as $dt) : ?>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <img src="<?php echo base_url() . 'assets/upload/' . $dt->Gambar ?>" width="50" />
+                                        </td>
+                                        <td><?php echo $dt->Nama ?></td>
+                                        <td><?php echo $dt->HargaSewa ?></td>
+                                        <td>
+                                            <a class="btn btn-round btn-danger text-white">Remove</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+
                             </table>
                         </div>
                     </div>
