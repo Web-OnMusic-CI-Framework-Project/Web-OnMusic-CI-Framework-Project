@@ -11,49 +11,61 @@
                             </div>
 
                             <div class="card-body">
-                                <form method="POST">
-                                    <div class="row">
-                                        <div class="form-group col-6">
-                                            <label for="Name">Name</label>
-                                            <input type="text" class="form-control" name="Name" autofocus>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="Username">Username</label>
-                                            <input type="text" class="form-control" name="Username">
-                                        </div>
+                                
+                                <?php echo form_open('register_page/register_action'); ?>
+                                    
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label class="font-weight-bold" for="Name">Name</label>
+                                        <input type="text" class="form-control" name="Nama" autofocus>
+                                        <?php echo form_error('Nama', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
+                                    <div class="form-group col-6">
+                                        <label class="font-weight-bold" for="Username">Username</label>
+                                        <input type="text" class="form-control" name="Username">
+                                        <?php echo form_error('Username', '<div class="text-small text-danger">', '</div>') ?>
+                                    </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="NoTelp">Phone Number</label>
-                                        <input type="text" class="form-control" name="NoTelp">
-                                    </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="NoTelp">Phone Number</label>
+                                    <input type="text" class="form-control phone-number" name="NoTelp">
+                                    <?php echo form_error('NoTelp', '<div class="text-small text-danger">', '</div>') ?>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="Alamat">Address</label>
-                                        <input type="text" class="form-control" name="Alamat">
-                                    </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="NoTelp">Email</label>
+                                    <input type="text" class="form-control" name="Email">
+                                    <?php echo form_error('Email', '<div class="text-small text-danger">', '</div>') ?>
+                                </div>
 
-                                    <div class="row">
-                                        <div class="form-group col-6">
-                                            <label for="password" class="d-block">Password</label>
-                                            <input id="password" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="Password">
-                                            <div id="pwindicator" class="pwindicator">
-                                                <div class="bar"></div>
-                                                <div class="label"></div>
-                                            </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bold" for="Alamat">Address</label>
+                                    <input type="text" class="form-control" name="Alamat">
+                                    <?php echo form_error('Alamat', '<div class="text-small text-danger">', '</div>') ?>
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label class="font-weight-bold" for="password" class="d-block">Password</label>
+                                        <input id="password" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="Password">
+                                        <div id="pwindicator" class="pwindicator">
+                                            <div class="bar"></div>
+                                            <div class="label"></div>
                                         </div>
-                                        <div class="form-group col-6">
-                                            <label for="password2" class="d-block">Password Confirmation</label>
-                                            <input id="password2" type="password" class="form-control" name="password-confirm">
-                                        </div>
+                                        <?php echo form_error('Password', '<div class="text-small text-danger">', '</div>') ?>
                                     </div>
+                                    <div class="form-group col-6">
+                                        <label class="font-weight-bold" for="password2" class="d-block">Password Confirmation</label>
+                                        <input id="password2" type="password" class="form-control" name="password-confirm">
+                                    </div>
+                                </div>
 
-                                    <div class="form-group px-5">
-                                        <button type="submit" class="btn btn-warning btn-lg btn-block" style="background-color: #FAFF00; border-color:#FAFF00; color: black">
-                                            <b>Register</b>
-                                        </button>
-                                    </div>
-                                </form>
+                                <div class="form-group px-5">
+                                    <button type="submit" class="btn btn-warning btn-lg btn-block" style="background-color: #FAFF00; border-color:#FAFF00; color: black">
+                                        <b>Register</b>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
