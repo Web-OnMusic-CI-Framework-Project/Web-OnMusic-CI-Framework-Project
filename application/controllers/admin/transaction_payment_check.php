@@ -11,7 +11,7 @@ class Transaction_Payment_Check extends CI_Controller
 
     public function getDataProperties()
     {
-        $data['properties'] = $this->db->query("SELECT * FROM property")->result();
+        $data['properties'] = $this->db->query("SELECT * FROM alatmusikjasa")->result();
         $data['data_properties'] = $this->input->post('detail-transaction');
 
         $this->load->view('templates_admin/header');
