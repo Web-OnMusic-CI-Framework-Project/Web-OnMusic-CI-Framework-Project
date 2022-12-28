@@ -7,7 +7,16 @@
       <div class="col-12 col-md-12 col-lg-12">
         <div class="card">
           <div class="card-body">
-            <form method="POST" action="<?php echo base_url('admin/data_property_music/add_property_music') ?>" enctype="multipart/form-data">
+            <form method="POST" action="<?php echo base_url('admin/data_property_music/add_property_music_action') ?>" enctype="multipart/form-data">
+              <!-- <div class="form-group">
+                <label for="kode_type" class="font-weight-bold">Kode Type</label>
+                <? foreach ($type as $tp) : ?>
+                  <select name="kode_type" id="" class="form-control">
+                    <option value="">--Set Type--</option>
+                    <option value="<?php echo $tp->kode_type ?>"></option>
+                  </select>
+                <? endforeach ?>
+              </div> -->
               <div class="form-group">
                 <label class="font-weight-bold" for="Nama">Name</label>
                 <input type="text" class="form-control" name="Nama">
