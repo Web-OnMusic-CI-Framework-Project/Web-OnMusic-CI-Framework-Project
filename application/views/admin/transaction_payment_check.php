@@ -97,10 +97,7 @@
                             <button class="btn btn-success">Save</button>
 
                             <?php 
-
-                                $phone='+6281774937612';
-                                $url='https://wa.me/'.$phone.'/?text=Saya%20ingin%20memastikan%20apakah%20anda%20sudah%20melampirkan%20bukti%20pembayaran?';
-
+                                $url='https://wa.me/'.$user_phone.'/?text=Selamat%20siang%2C%20pelanggan%20dengan%20nomor%20ID%20'.$id_user.'%20atas%20nama%20'.$name_user.'%2C%20apakah%20sudah%20melampirkan%20bukti%20pembayaran%3F%20Karena%20kami%20akan%20segera%20memproses%20pesanan%20Anda.%20Terima%20Kasih.';
                             ?>
 
                             <p class="mt-4 bb">Have not payed yet? <a href="<?php echo $url ?>" class="font-weight-bold" target="_blank">Contact Them Here</a></p>

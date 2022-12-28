@@ -69,6 +69,9 @@
                                         <td>
                                             <form action="<?php echo base_url() .'admin/transaction_payment_check/getDataProperties' ?>" method="post">
                                                 <button class="btn <?php echo $tr->status_pembayaran == '1' ? 'btn-success' : 'btn-danger' ?>" name="detail-transaction" value="<?php echo $tr->id_alat_musik_jasa?>"><i class="fa fa-lg <?php echo $tr->status_pembayaran == '1' ? 'fa-check-circle' : 'fa-times-circle' ?> text-white"></i></button>
+                                                <input type="hidden" name="id-user" value="<?php echo $tr->id_user?>">
+                                                <input type="hidden" name="name-user" value="<?php echo $tr->Nama?>">
+                                                <input type="hidden" name="phone" value="<?php echo $tr->NoTelp?>">
                                             </form>
                                         </td>
                                         <td>
