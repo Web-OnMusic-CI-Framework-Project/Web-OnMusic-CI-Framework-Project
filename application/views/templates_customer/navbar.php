@@ -9,10 +9,24 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav navbar-right ml-auto">
                     <li class="nav-item active"><a href="<?php echo base_url('customer/dashboard/') ?>" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="<?php echo base_url('customer/customer_checkout_page/') ?>" class="nav-link">Checkout</a></li>
-                    <li class="nav-item"><a href="<?php echo base_url('customer/customer_my_transaction_page/') ?>" class="nav-link">My Transaction</a></li>
-                    <li class="nav-item"><a href="<?php echo base_url('register_page') ?>" class="nav-link">Register</a></li>
-                    <li class="nav-item"><a href="<?php echo base_url('login_page') ?>" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="<?php echo base_url('customer/customer_checkout_page/') ?>" class="nav-link text-white">Checkout</a></li>
+                    <li class="nav-item"><a href="<?php echo base_url('customer/customer_my_transaction_page/') ?>" class="nav-link text-white">My Transaction</a></li>
+                    
+                    <?php if ($this->session->userdata('username')) { ?>
+                        <li class="nav-item">
+                            <span class="font-weight-bold" style="color: white;">Welcome, <?php echo $this->session->userdata('username'); ?></span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-sm btn-warning text-white" style="margin-left: 10px;" href="<?php echo base_url('login_page/logout') ?>">Logout</a>
+                        </li>
+                    <?php } else { ?>
+                        <li class="nav-item">
+                            <a class="btn btn-sm btn-outline-dark text-white" href="<?php echo base_url('register_page'); ?>" class="nav-link">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-sm btn-outline-dark text-white" style="margin-left: 10px;" href="<?php echo base_url('login_page'); ?>" class="nav-link">Login</a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </nav>
