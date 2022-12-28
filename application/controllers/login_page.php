@@ -42,8 +42,10 @@ class Login_Page extends CI_Controller
                 </div>');
                 redirect('login_page');
             }elseif ($first_row->role_id === '1') {
+                $this->session->set_userdata('username',$first_row->Username);
                 redirect('admin/dashboard');
             }else {
+                $this->session->set_userdata('username',$first_row->Username);
                 $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 Login success!.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -55,6 +57,12 @@ class Login_Page extends CI_Controller
             
             
         }
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('customer/dashboard');
     }
 
     public function _rules()
