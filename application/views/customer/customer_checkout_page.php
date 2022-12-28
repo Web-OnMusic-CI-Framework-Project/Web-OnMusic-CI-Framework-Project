@@ -16,7 +16,7 @@
                                     <th>Price Rent/day</th>
                                     <th>Action</th>
                                 </tr>
-                                <?php foreach ($detail as $dt) : ?>
+                                <!-- <?php foreach ($detail as $dt) : ?>
                                     <tr>
                                         <td>1</td>
                                         <td>
@@ -28,7 +28,7 @@
                                             <a class="btn btn-round btn-danger text-white">Remove</a>
                                         </td>
                                     </tr>
-                                <?php endforeach ?>
+                                <?php endforeach ?> -->
 
                             </table>
                         </div>
