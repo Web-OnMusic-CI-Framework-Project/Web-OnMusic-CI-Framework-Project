@@ -5,7 +5,6 @@ class Register_Page extends CI_Controller
     {
         $this->load->view('templates_customer/header');
         $this->load->view('register_page');
-        $this->load->view('templates_customer/footer');
     }
 
     public function register_action()
@@ -27,6 +26,7 @@ class Register_Page extends CI_Controller
             $Email             = $this->input->post('Email');
             $NoTelp             = $this->input->post('NoTelp');
             $Alamat             = $this->input->post('Alamat');
+            $role_id            = '2';
 
             $data = array(
                 'Nama'                  => $Nama,
@@ -35,6 +35,7 @@ class Register_Page extends CI_Controller
                 'Email'                => $Email,
                 'NoTelp'                => $NoTelp,
                 'Alamat'                => $Alamat,
+                'role_id'               => $role_id
             );
 
             $this->data_user->insert_data($data, 'user');
