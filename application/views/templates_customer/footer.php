@@ -1,4 +1,4 @@
-    <footer class="footer">
+    <footer class="footer bg-color-footer" style="height: 50vh; position:relative;">
         <span style="position: absolute; bottom: 8px; right: 16px;">
             <img src="<?php echo base_url() ?>assets/image/img-logo-onmusic.png" class="sidebar-gone-hide mr-2" width="40px" />
             <a href="index.html" style="color: white; text-transform: none;" class="navbar-brand"><span class="text-warning">On</span>Music</a>
