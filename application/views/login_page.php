@@ -6,34 +6,38 @@
                     <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <div class="card card-warning mt-5 rounded-0" style="border-top: 4px solid #FAFF00;">
                             <div class="text-center pt-3">
+                                <span class="m-2"><?php echo $this->session->flashdata('pesan') ?></span>
                                 <h4 class="">Login</h4>
                             </div>
                             <div class="card-body">
-                                <form method="POST" action="#">
-                                    <div class="form-group">
-                                        <label for="Username" class="font-weight-bold">Username</label>
-                                        <input id="username" type="text" class="form-control" name="Username" tabindex="1" autofocus>
-                                    </div>
+                                
+                                <?php echo form_open('login_page/login_action'); ?>
 
-                                    <div class="form-group">
-                                        <div class="d-block">
-                                            <label for="password" class="control-label font-weight-bold">Password</label>
-                                        </div>
-                                        <input id="password" type="password" class="form-control" name="Password" tabindex="2">
-                                    </div>
+                                <div class="form-group">
+                                    <label for="Username" class="font-weight-bold">Username</label>
+                                    <input id="username" type="text" class="form-control" name="Username" tabindex="1" autofocus>
+                                    <?php echo form_error('Username', '<div class="text-small text-danger">', '</div>') ?>
+                                </div>
 
-                                    <div class="form-group p-3">
-                                        <button type="submit" class="btn btn-warning btn-lg btn-block font-weight-bold" style="background-color: #FAFF00; border-color:#FAFF00; color: black" tabindex="4">
-                                            Login
-                                        </button>
+                                <div class="form-group">
+                                    <div class="d-block">
+                                        <label for="password" class="control-label font-weight-bold">Password</label>
                                     </div>
-                                </form>
+                                    <input id="password" type="password" class="form-control" name="Password" tabindex="2">
+                                    <?php echo form_error('Password', '<div class="text-small text-danger">', '</div>') ?>
+                                </div>
 
+                                <div class="form-group p-3">
+                                    <button type="submit" class="btn btn-warning btn-lg btn-block font-weight-bold" style="background-color: #FAFF00; border-color:#FAFF00; color: black" tabindex="4">
+                                        Login
+                                    </button>
+                                </div>
+                                <div class="text-muted text-center">
+                                    Don't have an account? <a href="<?php echo base_url('register_page') ?>">Register</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-muted text-center">
-                            Don't have an account? <a href="<?php echo base_url('register_page') ?>">Register</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
