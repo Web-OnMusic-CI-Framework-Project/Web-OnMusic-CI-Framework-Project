@@ -37,7 +37,9 @@
                     </div>
                 </form>
                 <div class="navbar-nav navbar-right">
-                    <h6 class="d-sm-none d-lg-inline-block text-white">Hi, Ujang Maman</h6>
+                    <h6 class="d-sm-none d-lg-inline-block text-white">
+                        Welcome, <?php echo $this->session->userdata('username'); ?>
+                    </h6>
                 </div>
             </nav>
             <div class="main-sidebar sidebar-style-2 color-style-sidebar">
@@ -61,7 +63,7 @@
                         <li><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/data_customer') ?>"><i class="fas fa-users"></i> <span>Data Customer</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/transaction') ?>"><i class="fas fa-money-bill"></i> <span>Transaction</span></a></li>
                         <li><a class="nav-link text-dark rounded" href="<?php echo base_url('admin/report') ?>"><i class="fas fa-file"></i> <span>Report</span></a></li>
-                        <li><a class="nav-link text-dark rounded" href="<?php echo base_url('login_page') ?>"><i class="fas fa-sign-out-alt"></i> <span>Log-Out</span></a></li>
+                        <li><a class="nav-link text-dark rounded" href="<?php echo base_url('login_page/logout') ?>"><i class="fas fa-sign-out-alt"></i> <span>Log-Out</span></a></li>
                     </ul>
                 </aside>
             </div>
