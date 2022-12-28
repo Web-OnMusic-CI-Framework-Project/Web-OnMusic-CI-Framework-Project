@@ -62,7 +62,9 @@
                                             <td><?php echo $pr->Nama?></td>
                                             <td>Rp<?php echo number_format($pr->HargaSewa, 0, ',', '.')?></td>
                                             <td>
-                                                <a class="btn btn-round btn-success text-white">See Detail</a>
+                                                <form action="<?php echo base_url('admin/transaction_see_detail/detail_property/') . $pr->id_alat_musik_jasa ?>" method="post">
+                                                    <button class="btn btn-round btn-success text-white" name="back-to-transaction" value="back_to_transaction">See Detail</button>
+                                                </form>
                                             </td>
 
                                             <?php $totalPayment += $pr->HargaSewa?>
