@@ -6,9 +6,9 @@ class Data_User extends CI_Model{
         return $this->db->get($table);
     }
     
-    public function get_data_where($table, $where)
+    public function get_data_where($table, $where, $limit = NULL)
     {
-        return $this->db->get_where($table, $where);
+        return $this->db->get_where($table, $where, $limit);
     }
 
     public function insert_data($data, $table)
