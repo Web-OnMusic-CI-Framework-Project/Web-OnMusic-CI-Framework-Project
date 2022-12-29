@@ -9,7 +9,6 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav navbar-right ml-auto">
                     <li class="nav-item active"><a href="<?php echo base_url('customer/dashboard/') ?>" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="<?php echo base_url('customer/customer_checkout_page/') ?>" class="nav-link text-white">Checkout</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('customer/customer_my_transaction_page/') ?>" class="nav-link text-white">My Transaction</a></li>
                     
                     <?php if ($this->session->userdata('username')) { ?>
