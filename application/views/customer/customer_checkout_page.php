@@ -16,18 +16,49 @@
                                     <th>Price Rent/day</th>
                                     <th>Action</th>
                                 </tr>
-                                <?php foreach ($detail as $dt) : ?>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <img src="<?php echo base_url() . 'assets/upload/' . $dt->Gambar ?>" width="50" />
-                                        </td>
-                                        <td><?php echo $dt->Nama ?></td>
-                                        <td><?php echo $dt->HargaSewa ?></td>
-                                        <td>
-                                            <a class="btn btn-round btn-danger text-white">Remove</a>
-                                        </td>
-                                    </tr>
+                                <?php foreach ($detail as $dt) : 
+
+                                    if(empty($item_id)) {?>
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <img src="<?php echo base_url() . 'assets/upload/' . $dt->Gambar ?>" width="50" />
+                                            </td>
+                                            <td><?php echo $dt->Nama ?></td>
+                                            <td><?php echo $dt->HargaSewa ?></td>
+                                            <td>
+                                                <a class="btn btn-round btn-danger text-white">Remove</a>
+                                            </td>
+                                        </tr>
+
+                                    <?php } else { 
+                                        
+                                        $no = 1;
+                                        $items = explode(", ", $item_id);
+                                     
+
+                                        foreach($items as $item) :?>
+
+                                            <?php if($dt->id_alat_musik_jasa == $item) { ?>
+
+                                                <tr>
+                                                    <td><?php echo $no ?></td>
+                                                    <td>
+                                                        <img src="<?php echo base_url() . 'assets/upload/' . $dt->Gambar ?>" width="50" />
+                                                    </td>
+                                                    <td><?php echo $dt->Nama ?></td>
+                                                    <td><?php echo $dt->HargaSewa ?></td>
+                                                    <td>
+                                                        <a class="btn btn-round btn-danger text-white">Remove</a>
+                                                    </td>
+                                                </tr>
+
+                                            <?php } ?>
+
+                                        <?php $no++; endforeach; ?>
+
+                                    <?php } ?>
                                 <?php endforeach ?>
 
                             </table>

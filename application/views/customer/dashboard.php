@@ -27,19 +27,21 @@
     </div>
     <!-- Section-->
     <section class="py-5">
+    <form action="<?php echo base_url('customer/customer_checkout_page/') ?>" method='post'>
         <h1 class="text-center fw-bolders text-dark">Services Products</h1>
-        <div class="container px-4 px-lg-5 mt-5">
+        <button class="btn btn-yellow float-right pr-5 pl-5" style="margin-right: 9%" type="submit" name="checkout" value"item-rent">Checkout</button>
+        <div class="container px-4 px-lg-5 mt-5 pt-3">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-4 row-cols-xl-4 justify-content-center">
                 <?php foreach ($alatmusikjasa as $amj) : ?>
                     <div class="col-md-4 mb-5">
-                        <a href="<?php echo base_url('customer/dashboard/checkout/') . $amj->id_alat_musik_jasa ?>">   
+                        <a href="<?php echo $amj->Status == 1 ? base_url('customer/dashboard/checkout/') . $amj->id_alat_musik_jasa : '#' ?>">   
                             <div class="card h-100 bg-color-product shadow" style="border-radius: 1.5em;">
                             <?php if ($amj->Status == 0) {
                                 echo "";
                             } else {
                                 echo "
                                         <label class='btn btn-yellow floating-right-top-btn' for='$amj->id_alat_musik_jasa'>
-                                            <input type='checkbox' class='btn-check mr-1' id='$amj->id_alat_musik_jasa' name='checkbox' value='1'>Rent
+                                            <input type='checkbox' class='btn-check mr-1' id='$amj->id_alat_musik_jasa' name='item-rent[]' value='$amj->id_alat_musik_jasa'>Rent
                                         </label>
                                     ";
                             } ?>
@@ -60,7 +62,7 @@
                                         <h4 class="h4"><?php echo $amj->Nama ?></h4>
                                         <!-- Product price-->
                                         <span class="h2 fw-bolder">
-                                            Rp <?php echo $amj->HargaSewa ?>/day
+                                            Rp<?php echo number_format($amj->HargaSewa, 0, ',', '.') ?>/day
                                         </span>
                                     </div>
                                 </div>
@@ -69,5 +71,6 @@
                     </div>
                 <?php endforeach ?>
             </div>
-        </div>
+        </div>                         
+    </form>
     </section>
