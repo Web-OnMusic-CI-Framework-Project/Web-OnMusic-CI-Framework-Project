@@ -34,6 +34,15 @@
                     <div class="col-md-4 mb-5">
                         <a href="<?php echo base_url('customer/dashboard/checkout/') . $amj->id_alat_musik_jasa ?>">   
                             <div class="card h-100 bg-color-product shadow" style="border-radius: 1.5em;">
+                            <?php if ($amj->Status == 0) {
+                                echo "";
+                            } else {
+                                echo "
+                                        <label class='btn btn-yellow floating-right-top-btn' for='$amj->id_alat_musik_jasa'>
+                                            <input type='checkbox' class='btn-check mr-1' id='$amj->id_alat_musik_jasa' name='checkbox' value='1'>Rent
+                                        </label>
+                                    ";
+                            } ?>
                                 <!-- Product image-->
                                 <img class="card-img-top p-1" src="<?php echo base_url() . 'assets/upload/' . $amj->Gambar ?>" alt="..." style="border-radius: 1.5em;" />
                                 <!-- Product details-->

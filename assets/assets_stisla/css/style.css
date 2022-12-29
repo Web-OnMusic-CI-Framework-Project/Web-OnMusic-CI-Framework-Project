@@ -1286,6 +1286,25 @@ h6 .badge {
     background-color: #ff990d !important;
     color: #fff !important; }
 
+.btn-yellow, .btn-yellow.disabled {
+  box-shadow: 0 2px 6px #faff00 !important;
+  background-color: #faff00 !important;
+  border-color: #faff00 !important;
+  border-radius: 12px;
+  font-weight: bolder;
+  color: rgb(0, 0, 0); }  
+  .btn-yellow:hover, .btn-yellow:focus, .btn-yellow:active, .btn-yellow.disabled:hover, .btn-yellow.disabled:focus, .btn-yellow.disabled:active {
+    background-color: #ff990d !important;
+    border-color: #ff990d !important;
+    color: #fff !important; }
+
+.floating-right-top-btn
+{
+position : absolute;
+right : 15px;
+top : 15px;
+}
+
 .btn-outline-warning:hover, .btn-outline-warning:focus, .btn-outline-warning:active, .btn-outline-warning.disabled:hover, .btn-outline-warning.disabled:focus, .btn-outline-warning.disabled:active {
   background-color: #ffa426 !important;
   color: #fff !important; }
