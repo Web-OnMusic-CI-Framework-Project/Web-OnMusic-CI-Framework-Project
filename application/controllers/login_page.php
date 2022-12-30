@@ -46,6 +46,7 @@ class Login_Page extends CI_Controller
                 redirect('admin/dashboard');
             }else {
                 $this->session->set_userdata('username',$first_row->Username);
+                $this->session->set_userdata('id_user',$first_row->id_user);
                 $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 Login success!.
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">

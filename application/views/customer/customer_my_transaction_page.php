@@ -17,34 +17,27 @@
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Name Customer</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-round btn-primary text-white">See Detail</a>
-                                    </td>
-                                    <td>Bill</td>
-                                    <td>
-                                        <span class="badge badge-primary text-white">Check Payment</span>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-danger text-white">Cancel</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Name Customer</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-round btn-primary text-white">See Detail</a>
-                                    </td>
-                                    <td>Bill</td>
-                                    <td>
-                                        <span class="badge badge-success text-white">Rent Finished</span>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-secondary text-white">Cancel</a>
-                                    </td>
-                                </tr>
+                                <?php $no = 1;
+                                foreach($transaction as $tr) : ?>
+
+                                    <tr>
+                                        <td><?php echo $no++?></td>
+                                        <td><?php echo $tr->Nama?></td>
+                                        <td>
+                                            <form action="<?php echo base_url() .'customer/transaction_see_detail/getDataProperties' ?>" method="post">
+                                                <button class="btn btn-sm btn-round btn-primary text-white" name="see-detail-transaction" value="<?php echo $tr->id_alat_musik_jasa?>">See Detail</button>
+                                            </form>
+                                        </td>
+                                        <td>Rp<?php echo number_format($tr->TotalHarga, 0, ',', '.') ?></td>
+                                        <td>
+                                            <span class="<?php echo $tr->status_transaksi == 'Finished' ? 'badge badge-success' : 'btn btn-sm btn-round btn-primary' ?> text-white"><?php echo $tr->status_transaksi == 'Finished' ? 'Rent Finished' : 'Check Payment' ?></span>
+                                        </td>
+                                        <td>
+                                        <a href="<?php echo base_url() .'customer/transaction/transaction_canceled' ?>" class="btn btn-danger <?php echo $tr->status_transaksi == 'Finished' ? 'disabled' : '' ?>" role="button" aria-disabled="<?php echo $tr->status_transaksi == 'Finished' ? '' : 'true' ?>">Cancel</a>
+                                        </td>
+                                    </tr>
+
+                                <?php endforeach; ?>
                             </table>
                         </div>
                     </div>
