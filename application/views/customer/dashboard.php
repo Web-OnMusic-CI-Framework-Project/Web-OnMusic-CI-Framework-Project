@@ -27,6 +27,7 @@
     </div>
     <!-- Section-->
     <section class="py-5">
+    <?php echo $this->session->flashdata('pesan') ?>
     <form action="<?php echo base_url('customer/customer_checkout_page/') ?>" method='post'>
         <h1 class="text-center fw-bolders text-dark">Services Products</h1>
         <button class="btn btn-yellow float-right pr-5 pl-5" style="margin-right: 9%" type="submit" name="checkout" value"item-rent">Checkout</button>
