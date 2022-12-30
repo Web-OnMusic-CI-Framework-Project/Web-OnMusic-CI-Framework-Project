@@ -83,11 +83,57 @@
                         Total Price Items : Rp<?php echo number_format($totalPayment, 0, ',', '.') ?>
                     <?php } ?>
                 </div>
-                <form action="<?php echo base_url() .'customer/customer_checkout_page/calculateTotalPayment' ?>" class="form-group" method="post">
+
+                <?php
+                foreach ($detail as $dt) : 
+
+                    if(empty($item_id)) {?>
+
+                        <form action="<?php echo base_url() .'customer/customer_checkout_page/rentButton' ?>" class="form-group" method="post">
+                            <label class="font-weight-bold" for="TanggalMulaiSewa">Rent From</label>
+                            <input type="date" class="form-control datepicker" name="TanggalMulaiSewa" value="<?php echo date("d/m/Y") ?>">
+                            <label class="font-weight-bold" for="TanggalAkhirSewa">Until</label>
+                            <input type="date" class="form-control datepicker" name="TanggalAkhirSewa" value="<?php echo date("d/m/Y") ?>">
+                            <div class="form-group py-5">
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-warning btn-lg w-50 btn-block" tabindex="4">
+                                        Rent
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                    <?php } else { 
+                        
+                        $no = 1;
+                        $items = explode(", ", $item_id);
+
+                        foreach($items as $item) :?>
+
+                            <?php if($dt->id_alat_musik_jasa == $item) { ?>
+
+                                <?php 
+                                    $id = $dt->id_alat_musik_jasa;
+                                    $ids = strval($id);
+                                    $array_ids[] = $ids;
+                                ?>
+
+                            <?php } ?>
+
+                        <?php $no++; endforeach; ?>
+
+                    <?php } ?>
+
+                <?php endforeach ?>
+                <?php 
+                $ids_string = implode(", ", $array_ids); ?>
+                <form action="<?php echo base_url() .'customer/customer_checkout_page/rentButton' ?>" class="form-group" method="post">
                     <label class="font-weight-bold" for="TanggalMulaiSewa">Rent From</label>
                     <input type="date" class="form-control datepicker" name="TanggalMulaiSewa" value="<?php echo date("d/m/Y") ?>">
                     <label class="font-weight-bold" for="TanggalAkhirSewa">Until</label>
                     <input type="date" class="form-control datepicker" name="TanggalAkhirSewa" value="<?php echo date("d/m/Y") ?>">
+                    <input type="hidden" name="id-string" value="<?php echo $ids_string ?>">
+                    <input type="hidden" name="total-payment" value="<?php echo $totalPayment ?>">
                     <div class="form-group py-5">
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-warning btn-lg w-50 btn-block" tabindex="4">
@@ -96,6 +142,7 @@
                         </div>
                     </div>
                 </form>
+                ?>
             </div>
         </div>
     </section>
