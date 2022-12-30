@@ -24,8 +24,8 @@
                                         <td><?php echo $no++?></td>
                                         <td><?php echo $tr->Nama?></td>
                                         <td>
-                                            <form action="<?php echo base_url() .'customer/transaction_see_detail/getDataProperties' ?>" method="post">
-                                                <button class="btn btn-sm btn-round btn-primary text-white" name="see-detail-transaction" value="<?php echo $tr->id_alat_musik_jasa?>">See Detail</button>
+                                            <form action="<?php echo base_url() .'customer/customer_my_transaction_page_detail_property/getDataProperties' ?>" method="post">
+                                                <button class="btn btn-sm btn-round btn-primary text-white" name="see-detail-transaction" value="<?php echo $tr->id_keranjang?>">See Detail</button>
                                             </form>
                                         </td>
                                         <td>Rp<?php echo number_format($tr->TotalHarga, 0, ',', '.') ?></td>
