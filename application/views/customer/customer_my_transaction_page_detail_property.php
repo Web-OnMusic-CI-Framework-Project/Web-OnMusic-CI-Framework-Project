@@ -19,15 +19,19 @@
 
                                 <?php
                                 $no = 1;
+                                $totalPayment = 0;
                                 foreach ($keranjang as $kr) : 
 
                                     $items = explode(", ", $kr->id_alat_musik_jasa);
+                                    
 
                                     foreach($items as $item) : 
                                     
                                         foreach($alatmusikjasa as $amj) :
 
                                             if($amj->id_alat_musik_jasa == $item) { ?>
+
+                                                <?php $totalPayment += $amj->HargaSewa; ?>
         
                                                 <tr>
                                                     <td><?php echo $no ?></td>
@@ -37,7 +41,7 @@
                                                     <td><?php echo $amj->Nama ?></td>
                                                     <td>Rp<?php echo number_format($amj->HargaSewa, 0, ',', '.') ?></td>
                                                     <td>
-                                                        <a class="btn btn-round btn-danger text-white">Remove</a>
+                                                        <a class="btn btn-round btn-danger text-white" href="<?php echo base_url('customer/customer_my_transaction_page_detail_property/remove_button/') . $amj->id_alat_musik_jasa . '/' . $transaksi[0]->id_keranjang . '/' . $transaksi[0]->id_transaksi ?>">Remove</a>
                                                     </td>
                                                 </tr>
         
@@ -62,14 +66,13 @@
                         
                 foreach ($keranjang as $kr) : ?>
 
-                    <form class="form-group">
+                    <form action="<?php echo base_url() .'customer/customer_my_transaction_page_detail_property/save_button/' . $transaksi[0]->id_keranjang ?>" class="form-group" method="post" >
                         <label class="font-weight-bold" for="TanggalMulaiSewa">Rent From</label>
                         <input type="date" class="form-control datepicker" name="TanggalMulaiSewa" value="<?php echo $kr->TglAwalSewa ?>">
                         <label class="font-weight-bold" for="TanggalAkhirSewa">Until</label>
                         <input type="date" class="form-control datepicker" name="TanggalAkhirSewa" value="<?php echo $kr->TglAkhirSewa ?>">
-                        <div class="text-right font-weight-bold px-5 pb-2 pt-5">
-                            Total Payment : Rp<?php echo number_format($kr->TotalHarga, 0, ',', '.') ?>
-                        </div>
+                        <input type="hidden" name="total-payment" value="<?php echo $totalPayment ?>">
+                        
                         <div class="form-group py-5">
                             <div class="d-flex justify-content-center">
                                 <button type="submit" class="btn btn-warning btn-lg w-50 btn-block" tabindex="4">
