@@ -49,8 +49,12 @@
                                             </form>
                                         </td>
                                         <td>
-                                            <a href="<?php echo base_url() .'admin/transaction/transaction_completed' ?>" class="btn btn-success"><i class="fa fa-lg fa-check text-white"></i></a>
-                                            <a href="<?php echo base_url() .'admin/transaction/transaction_canceled' ?>" class="btn btn-danger"><i class="fa fa-lg fa-times text-white"></i></a>
+                                            <form method="post" action="<?php echo base_url('admin/transaction/transaction_completed/') .$tr->id_transaksi ?>">
+                                                <button name="id_transaksi" value="<?php echo $tr->id_transaksi ?>" class="btn btn-success"><i class="fa fa-lg fa-check text-white"></i></button>
+                                            </form>
+                                            <form method="post" action="<?php echo base_url('admin/transaction/transaction_canceled/') .$tr->id_transaksi ?>">
+                                                <button name="id_user" value="<?php echo $tr->id_user ?>" class="btn btn-danger"><i class="fa fa-lg fa-times text-white"></i></button>
+                                            </form>
                                         </td>
                                     </tr>
 
