@@ -9,6 +9,7 @@
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-bordered table-md text-center">
+                                <?php echo $this->session->flashdata('pesan') ?>   
                                 <tr>
                                     <th>No</th>
                                     <th>Customer</th>
@@ -33,7 +34,7 @@
                                             <span class="<?php echo $tr->status_transaksi == 'Finished' ? 'badge badge-success' : 'btn btn-sm btn-round btn-primary' ?> text-white"><?php echo $tr->status_transaksi == 'Finished' ? 'Rent Finished' : 'Check Payment' ?></span>
                                         </td>
                                         <td>
-                                        <a href="<?php echo base_url() .'customer/transaction/transaction_canceled' ?>" class="btn btn-danger <?php echo $tr->status_transaksi == 'Finished' ? 'disabled' : '' ?>" role="button" aria-disabled="<?php echo $tr->status_transaksi == 'Finished' ? '' : 'true' ?>">Cancel</a>
+                                        <a href="<?php echo base_url() .'customer/customer_my_transaction_page/cancel_transaction/' . $tr->id_transaksi ?>" class="btn btn-danger <?php echo $tr->status_transaksi == 'Finished' ? 'disabled' : '' ?>" role="button" aria-disabled="<?php echo $tr->status_transaksi == 'Finished' ? '' : 'true' ?>">Cancel</a>
                                         </td>
                                     </tr>
 
