@@ -75,8 +75,8 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="empty-state" data-height="400">
+                        <a href="<?php echo base_url('admin/transaction_payment_check/download_proff/'.$id_transaksi) ?>"><button class="btn btn-warning mt-4"><i class="fa fa-download"></i> Download Payment Proff</button></a>
                             <form method="post" action="<?php echo base_url('admin/transaction_payment_check/confirmPayment') ?>">
-                                <button class="btn btn-warning mt-4"><i class="fa fa-download"></i> Download Payment Proff</button>
                                 <div class="form-group mt-5">
                                     <label class="custom-switch">
                                         <input type="checkbox" name="status_pembayaran" value="1" class="custom-switch-input">
