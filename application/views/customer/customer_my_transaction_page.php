@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
+                    <span class="mt-2 p-2"><?php echo $this->session->flashdata('pesan')?></span>
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-bordered table-md text-center">
@@ -30,7 +31,20 @@
                                         </td>
                                         <td>Rp<?php echo number_format($tr->TotalHarga, 0, ',', '.') ?></td>
                                         <td>
-                                            <span class="<?php echo $tr->status_transaksi == 'Finished' ? 'badge badge-success' : 'btn btn-sm btn-round btn-primary' ?> text-white"><?php echo $tr->status_transaksi == 'Finished' ? 'Rent Finished' : 'Check Payment' ?></span>
+                                            <form action="<?php echo base_url() .'customer/customer_my_transaction_check_payment_page_upload_payment_proff' ?>" method="post">
+                                                <?php 
+                                                
+                                                    if($tr->status_transaksi == 'Finished')
+                                                    { ?>
+                                                        <span class="badge badge-success text-white">Rent Finished</span>
+                                                    <?php }
+                                                    else
+                                                    { ?>
+                                                        <button class="btn btn-sm btn-round btn-primary text-white" name="get-detail-properties" value="<?php echo $tr->id_keranjang?>">Check Payment</button>
+                                                    <?php }
+                                                
+                                                ?>
+                                            </form>
                                         </td>
                                         <td>
                                         <a href="<?php echo base_url() .'customer/transaction/transaction_canceled' ?>" class="btn btn-danger <?php echo $tr->status_transaksi == 'Finished' ? 'disabled' : '' ?>" role="button" aria-disabled="<?php echo $tr->status_transaksi == 'Finished' ? '' : 'true' ?>">Cancel</a>
