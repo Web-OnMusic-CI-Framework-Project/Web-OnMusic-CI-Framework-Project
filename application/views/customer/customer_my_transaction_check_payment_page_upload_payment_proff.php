@@ -38,7 +38,7 @@
                                                         $date2      = date_create($rent_until);
                                                         $diff       = date_diff($date1,$date2);
                                                         $total_day  = $diff->format("%a");
-                                                        $total_payment = $tr->TotalHarga * $total_day;
+                                                        $total_payment = $tr->TotalHarga;
                                                         $bukti_pembayaran = $tr->BuktiBayar;
                                                         $status_pembayaran = $tr->status_pembayaran;
                                                         $id_transaksi = $tr->id_transaksi
