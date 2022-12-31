@@ -75,7 +75,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="empty-state" data-height="400">
-                            <form method="post" action="<?php base_url('admin/transaction_payment_check/confirmPayment') ?>">
+                            <form method="post" action="<?php echo base_url('admin/transaction_payment_check/confirmPayment') ?>">
                                 <button class="btn btn-warning mt-4"><i class="fa fa-download"></i> Download Payment Proff</button>
                                 <div class="form-group mt-5">
                                     <label class="custom-switch">
