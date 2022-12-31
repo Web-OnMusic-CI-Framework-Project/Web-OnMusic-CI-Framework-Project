@@ -50,8 +50,11 @@ class Transaction_Payment_Check extends CI_Controller
         redirect('admin/transaction');
     }
 
-    public function download_proff()
+    public function download_proff($id)
     {
-
+        $this->load->helper('download');
+        $filePembayaran = $this->model_transaction->downloadProff($id);
+        $file = 'assets/upload/'.$filePembayaran['BuktiBayar'];
+        force_download($file, NULL);
     }
 }

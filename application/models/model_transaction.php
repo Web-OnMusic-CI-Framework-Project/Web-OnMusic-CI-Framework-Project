@@ -42,4 +42,10 @@ class Model_transaction extends CI_Model{
             return false;
         }
     }
+
+    public function downloadProff($id)
+    {
+        $query = $this->db->get_Where('transaksi', array('id_transaksi' => $id));
+        return $query->row_array();
+    }
 }
