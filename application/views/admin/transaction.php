@@ -28,6 +28,9 @@
                                         <td>
                                             <form action="<?php echo base_url() .'admin/transaction_see_detail/getDataProperties' ?>" method="post">
                                                 <button class="btn btn-sm btn-round btn-primary text-white" name="see-detail-transaction" value="<?php echo $tr->id_alat_musik_jasa?>">See Detail</button>
+                                                <input type="hidden" name="total-harga" value="<?php echo $tr->TotalHarga?>">
+                                                <input type="hidden" name="tgl-mulai-sewa" value="<?php echo $tr->TglMulaiSewa?>">
+                                                <input type="hidden" name="tgl-akhir-sewa" value="<?php echo $tr->TglAkhirSewa?>">
                                             </form>
                                         </td>
                                         <td>
@@ -39,6 +42,10 @@
                                                 <input type="hidden" name="id-user" value="<?php echo $tr->id_user?>">
                                                 <input type="hidden" name="name-user" value="<?php echo $tr->Nama?>">
                                                 <input type="hidden" name="phone" value="<?php echo $tr->NoTelp?>">
+                                                <input type="hidden" name="id-transaksi" value="<?php echo $tr->id_transaksi?>">
+                                                <input type="hidden" name="total-harga" value="<?php echo $tr->TotalHarga?>">
+                                                <input type="hidden" name="tgl-mulai-sewa" value="<?php echo $tr->TglMulaiSewa?>">
+                                                <input type="hidden" name="tgl-akhir-sewa" value="<?php echo $tr->TglAkhirSewa?>">
                                             </form>
                                         </td>
                                         <td>
