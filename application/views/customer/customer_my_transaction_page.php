@@ -19,10 +19,10 @@
                                 </tr>
                                 <?php $no = 1;
                                 foreach($transaction as $tr) : ?>
-
+                                    
                                     <tr>
                                         <td><?php echo $no++?></td>
-                                        <td><?php echo $tr->Nama?></td>
+                                        <td><?php echo $tr->id_user?></td>
                                         <td>
                                             <form action="<?php echo base_url() .'customer/customer_my_transaction_page_detail_property/getDataProperties' ?>" method="post">
                                                 <button class="btn btn-sm btn-round btn-primary text-white" name="see-detail-transaction" value="<?php echo $tr->id_keranjang?>">See Detail</button>
