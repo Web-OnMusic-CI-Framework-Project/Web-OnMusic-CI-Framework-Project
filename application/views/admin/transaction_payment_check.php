@@ -51,8 +51,21 @@
                             </table>
                         </div>
                     </div>
-                    <div class="text-right font-weight-bold p-5">
-                        Total Payment : Rp<?php echo number_format($totalPayment, 0, ',', '.')?> (Untuk sementara belum diambil dari db untuk TotalHarga, karena biar nilainya dinamis, pake perkalian biasa dulu :v )
+                    <div class="text-right font-weight-bold pt-2 pr-5 pb-2">
+                        Total price items : Rp<?php echo number_format($totalPayment, 0, ',', '.')?>
+                    </div>
+                    <div class="text-right font-weight-bold pt-2 pr-5 pb-2">
+                        Tanggal Mulai Sewa : <?php echo $tgl_mulai_sewa ?>
+                    </div>
+                    <div class="text-right font-weight-bold pt-2 pr-5 pb-2">
+                        Tanggal Akhir Sewa : <?php echo $tgl_akhir_sewa ?>
+                    </div>
+                    <div class="text-right font-weight-bold pt-2 pr-5 pb-2">
+                        Jumlah Hari : <?php echo $total_day ?>
+                    </div>
+                    <?php $totalPayment = $total_day * $total_harga ?>
+                    <div class="text-right font-weight-bold pt-2 pr-5 pb-4">
+                        Total Payment : Rp<?php echo number_format($totalPayment, 0, ',', '.')?>
                     </div>
                 </div>
             </div>
@@ -62,15 +75,18 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="empty-state" data-height="400">
-                            <button class="btn btn-warning mt-4"><i class="fa fa-download"></i> Download Payment Proff</button>
-                            <div class="form-group mt-5">
-                                <label class="custom-switch">
-                                    <input type="radio" name="option" value="1" class="custom-switch-input">
-                                    <span class="custom-switch-indicator"></span>
-                                    <span class="custom-switch-description font-weight-bold">Confirm Payment</span>
-                                </label>
-                            </div>
-                            <button class="btn btn-success">Save</button>
+                            <form method="post" action="<?php base_url('admin/transaction_payment_check/confirmPayment') ?>">
+                                <button class="btn btn-warning mt-4"><i class="fa fa-download"></i> Download Payment Proff</button>
+                                <div class="form-group mt-5">
+                                    <label class="custom-switch">
+                                        <input type="checkbox" name="status_pembayaran" value="1" class="custom-switch-input">
+                                        <input type="hidden" name="id_transaksi" value="<?php echo $id_transaksi ?>">
+                                        <span class="custom-switch-indicator"></span>
+                                        <span class="custom-switch-description font-weight-bold">Confirm Payment</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </form>
 
                             <?php 
                                 $url='https://wa.me/'.$user_phone.'/?text=Selamat%20siang%2C%20pelanggan%20dengan%20nomor%20ID%20'.$id_user.'%20atas%20nama%20'.$name_user.'%2C%20apakah%20sudah%20melampirkan%20bukti%20pembayaran%3F%20Karena%20kami%20akan%20segera%20memproses%20pesanan%20Anda.%20Terima%20Kasih.';

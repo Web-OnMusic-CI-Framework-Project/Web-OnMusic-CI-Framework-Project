@@ -64,13 +64,13 @@
                 <?php
                 $no = 1;
                         
-                foreach ($keranjang as $kr) : ?>
+                foreach ($transaksi as $tr) : ?>
 
                     <form action="<?php echo base_url() .'customer/customer_my_transaction_page_detail_property/save_button/' . $transaksi[0]->id_keranjang ?>" class="form-group" method="post" >
                         <label class="font-weight-bold" for="TanggalMulaiSewa">Rent From</label>
-                        <input type="date" class="form-control datepicker" name="TanggalMulaiSewa" value="<?php echo $kr->TglAwalSewa ?>">
+                        <input type="date" class="form-control datepicker" name="TanggalMulaiSewa" value="<?php echo $tr->TglMulaiSewa ?>">
                         <label class="font-weight-bold" for="TanggalAkhirSewa">Until</label>
-                        <input type="date" class="form-control datepicker" name="TanggalAkhirSewa" value="<?php echo $kr->TglAkhirSewa ?>">
+                        <input type="date" class="form-control datepicker" name="TanggalAkhirSewa" value="<?php echo $tr->TglAkhirSewa ?>">
                         <input type="hidden" name="total-payment" value="<?php echo $totalPayment ?>">
                         
                         <div class="form-group py-5">
