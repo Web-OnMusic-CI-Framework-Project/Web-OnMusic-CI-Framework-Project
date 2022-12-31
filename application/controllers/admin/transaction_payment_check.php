@@ -39,8 +39,7 @@ class Transaction_Payment_Check extends CI_Controller
         $status_pembayaran = $this->input->post('status_pembayaran');
 
         $data = array(
-            'status_pembayaran' => $status_pembayaran,
-            'status_transaksi' => 'Finished'
+            'status_pembayaran' => $status_pembayaran
         );
 
         $where = array(
@@ -49,5 +48,10 @@ class Transaction_Payment_Check extends CI_Controller
 
         $this->model_transaction->update_data('transaksi', $data, $where);
         redirect('admin/transaction');
+    }
+
+    public function download_proff()
+    {
+
     }
 }

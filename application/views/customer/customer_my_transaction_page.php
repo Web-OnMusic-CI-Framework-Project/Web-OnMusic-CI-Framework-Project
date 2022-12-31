@@ -6,7 +6,6 @@
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
                 <div class="card">
-                    <span class="mt-2 p-2"><?php echo $this->session->flashdata('pesan')?></span>
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-bordered table-md text-center">
