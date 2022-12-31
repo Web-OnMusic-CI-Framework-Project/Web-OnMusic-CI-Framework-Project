@@ -10,6 +10,7 @@
                     <div class="card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-bordered table-md text-center">
+                                <?php echo $this->session->flashdata('pesan') ?>   
                                 <tr>
                                     <th>No</th>
                                     <th>Customer</th>
@@ -20,14 +21,12 @@
                                 </tr>
                                 <?php $no = 1;
                                 foreach($transaction as $tr) : ?>
-
+                                    
                                     <tr>
                                         <td><?php echo $no++?></td>
-                                        <td><?php echo $tr->Nama?></td>
+                                        <td><?php echo $tr->id_user?></td>
                                         <td>
-                                            <form action="<?php echo base_url() .'customer/customer_my_transaction_page_detail_property/getDataProperties' ?>" method="post">
-                                                <button class="btn btn-sm btn-round btn-primary text-white" name="see-detail-transaction" value="<?php echo $tr->id_keranjang?>">See Detail</button>
-                                            </form>
+                                            <a class="btn btn-sm btn-round btn-primary text-white" href="<?php echo base_url('customer/customer_my_transaction_page_detail_property/getDataProperties/') . $tr->id_transaksi . '/' . $tr->id_keranjang ?>">See Detail</a>
                                         </td>
                                         <td>Rp<?php echo number_format($tr->TotalHarga, 0, ',', '.') ?></td>
                                         <td>
@@ -47,7 +46,7 @@
                                             </form>
                                         </td>
                                         <td>
-                                        <a href="<?php echo base_url() .'customer/transaction/transaction_canceled' ?>" class="btn btn-danger <?php echo $tr->status_transaksi == 'Finished' ? 'disabled' : '' ?>" role="button" aria-disabled="<?php echo $tr->status_transaksi == 'Finished' ? '' : 'true' ?>">Cancel</a>
+                                        <a href="<?php echo base_url() .'customer/customer_my_transaction_page/cancel_transaction/' . $tr->id_transaksi ?>" class="btn btn-danger <?php echo $tr->status_transaksi == 'Finished' ? 'disabled' : '' ?>" role="button" aria-disabled="<?php echo $tr->status_transaksi == 'Finished' ? '' : 'true' ?>">Cancel</a>
                                         </td>
                                     </tr>
 

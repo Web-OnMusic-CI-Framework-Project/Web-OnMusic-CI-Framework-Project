@@ -20,7 +20,7 @@
                                 $totalPayment = 0;
                                 foreach ($detail as $dt) : 
 
-                                    if(empty($item_id)) {?>
+                                    if(empty($keranjang)) {?>
 
                                         <tr>
                                             <td>1</td>
@@ -39,8 +39,8 @@
                                     <?php } else { 
                                         
                                         $no = 1;
-                                        $items = explode(", ", $item_id);
-
+                                        $items = explode(", ", $keranjang_id[0]->id_alat_musik_jasa);
+                                        
                                         foreach($items as $item) :?>
 
                                             <?php if($dt->id_alat_musik_jasa == $item) { ?>
@@ -55,7 +55,7 @@
                                                     <td><?php echo $dt->Nama ?></td>
                                                     <td>Rp<?php echo number_format($dt->HargaSewa, 0, ',', '.') ?></td>
                                                     <td>
-                                                        <a class="btn btn-round btn-danger text-white">Remove</a>
+                                                        <a class="btn btn-round btn-danger text-white" href="<?php echo base_url('customer/customer_checkout_page/remove_button/') . $dt->id_alat_musik_jasa ?>">Remove</a>
                                                     </td>
                                                 </tr>
 
@@ -87,7 +87,7 @@
                 <?php
                 foreach ($detail as $dt) : 
 
-                    if(empty($item_id)) {?>
+                    if(empty($keranjang)) {?>
 
                         <form action="<?php echo base_url() .'customer/customer_checkout_page/rentButton' ?>" class="form-group" method="post">
                             <label class="font-weight-bold" for="TanggalMulaiSewa">Rent From</label>
@@ -106,7 +106,7 @@
                     <?php } else { 
                         
                         $no = 1;
-                        $items = explode(", ", $item_id);
+                        $items = explode(", ", $keranjang_id[0]->id_alat_musik_jasa);
 
                         foreach($items as $item) :?>
 
@@ -136,13 +136,15 @@
                     <input type="hidden" name="total-payment" value="<?php echo $totalPayment ?>">
                     <div class="form-group py-5">
                         <div class="d-flex justify-content-center">
+                        
+                            <a class="btn btn-lg btn-danger text-light font-weight-bold" href="<?php echo base_url('customer/customer_checkout_page/cancel_button/') . $keranjang_id[0]->id_keranjang ?>" style="border-radius: 0.5em; margin-right:5px;">Cancel</a>
+
                             <button type="submit" class="btn btn-warning btn-lg w-50 btn-block" tabindex="4">
                                 Rent
                             </button>
                         </div>
                     </div>
                 </form>
-                ?>
             </div>
         </div>
     </section>
