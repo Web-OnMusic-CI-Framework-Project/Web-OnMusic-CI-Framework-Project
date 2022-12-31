@@ -58,6 +58,10 @@ class Customer_My_Transaction_Page_Detail_Property extends CI_Controller
         $total_payment = $this->input->post('total-payment');
         $tgl_awal_sewa =  $this->input->post('TanggalMulaiSewa');
         $tgl_akhir_sewa =  $this->input->post('TanggalAkhirSewa');
+        $date1      = date_create($this->input->post('TanggalMulaiSewa'));
+        $date2      = date_create($this->input->post('TanggalAkhirSewa'));
+        $diff       = date_diff($date1,$date2);
+        $total_day  = $diff->format("%a");
         $where_keranjang_id = array('id_keranjang'=>$id_keranjang);
 
         $query_keranjang_id = $this->model_transaction->get_data_where('keranjang',$where_keranjang_id)->result();;
@@ -69,11 +73,24 @@ class Customer_My_Transaction_Page_Detail_Property extends CI_Controller
             'TotalHarga' => $total_payment
         );
 
-        $where_update = array(
+        $data_transaksi = array(
+            'TglMulaiSewa' => $tgl_awal_sewa,
+            'TglAkhirSewa' => $tgl_akhir_sewa,
+            'TotalHarga' => $total_payment,
+            'DurasiSewa'=> $total_day
+        );
+
+        $where_update_keranjang = array(
             'id_keranjang'=>$query_keranjang_id[0]->id_keranjang
         );
 
-        $this->model_transaction->update_data('keranjang', $data_keranjang, $where_update);
+        $where_update_transaksi = array(
+            'id_keranjang'=>$id_keranjang
+        );
+
+        $this->model_transaction->update_data('keranjang', $data_keranjang, $where_update_keranjang);
+        $this->model_transaction->update_data('transaksi', $data_transaksi, $where_update_transaksi);
+
         // $this->model_alat_musik->insert_data($data_transaksi, 'transaksi');
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         Order changes has been made, continue your rent order by finishing your payment :)

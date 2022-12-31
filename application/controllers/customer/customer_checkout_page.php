@@ -65,6 +65,10 @@ class Customer_Checkout_Page extends CI_Controller
         $total_payment = $this->input->post('total-payment');
         $tgl_awal_sewa =  $this->input->post('TanggalMulaiSewa');
         $tgl_akhir_sewa =  $this->input->post('TanggalAkhirSewa');
+        $date1      = date_create($this->input->post('TanggalMulaiSewa'));
+        $date2      = date_create($this->input->post('TanggalAkhirSewa'));
+        $diff       = date_diff($date1,$date2);
+        $total_day  = $diff->format("%a");
 
         $query_keranjang_id = $this->model_transaction->get_keranjang_id('keranjang',$customer_id)->result();
         
@@ -75,7 +79,7 @@ class Customer_Checkout_Page extends CI_Controller
             'TglAkhirSewa' => $tgl_akhir_sewa,
             'TotalHarga' => $total_payment,
             'TotalHarga' => $total_payment,
-            'DurasiSewa' => 'belum dibuat codingan',
+            'DurasiSewa' => $total_day,
             'BuktiBayar' => 'belum ada',
             'status_transaksi' => 'Renting',
             'status_pembayaran' => '0',
