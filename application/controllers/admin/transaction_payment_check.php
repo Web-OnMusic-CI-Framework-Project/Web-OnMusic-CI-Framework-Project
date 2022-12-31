@@ -39,7 +39,8 @@ class Transaction_Payment_Check extends CI_Controller
         $status_pembayaran = $this->input->post('status_pembayaran');
 
         $data = array(
-            'status_pembayaran' => $status_pembayaran
+            'status_pembayaran' => $status_pembayaran,
+            'status_transaksi' => 'Finished'
         );
 
         $where = array(
