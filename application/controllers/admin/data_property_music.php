@@ -13,7 +13,7 @@ class Data_Property_Music extends CI_Controller
 
     public function add_property_music()
     {
-        $data['alatmusikjasa'] = $this->Model_Alat_Musik->get_data('alatmusikjasa')->result();
+        $data['alatmusikjasa'] = $this->model_alat_musik->get_data('alatmusikjasa')->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/data_property_music_add_property', $data);
@@ -30,19 +30,22 @@ class Data_Property_Music extends CI_Controller
             $Brand              = $this->input->post('Brand');
             $HargaSewa          = $this->input->post('HargaSewa');
             $Status             = $this->input->post('Status');
-            $Gambar               = $_FILES['gambar']['name'];
-            if ($Gambar = '') {
-            } else {
+            $Gambar                    = $_FILES['Foto']['name'];
+            if ($Gambar) {
                 $config['upload_path']     = './assets/upload';
-                $config['allowed_types']   = 'jpg|jpeg|png|tiff';
+                $config['allowed_types']   = 'pdf|jpg|jpeg|png|tiff';
 
                 $this->load->library('upload', $config);
-                if (!$this->upload->do_upload('Gambar')) {
-                    echo "Gambar Alat Music Gagal Diupload";
+
+                if ($this->upload->do_upload('Gambar')) {
+                    $gambar = $this->upload->data('file_name');
+                    $this->db->set('Gambar', $gambar);
                 } else {
-                    $Gambar = $this->upload->data('file_name');
+                    echo $this->upload->display_errors();
                 }
             }
+
+            
 
             $data = array(
                 'Nama'                  => $Nama,
@@ -72,12 +75,12 @@ class Data_Property_Music extends CI_Controller
         $this->load->view('templates_admin/footer');
     }
 
-    public function update_data_aksi()
+    public function update_data_aksi($id)
     {
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update_data();
+            $this->update_data($id);
         } else {
             $id                 = $this->input->post('id_alat_musik_jasa');
             $Nama               = $this->input->post('Nama');
