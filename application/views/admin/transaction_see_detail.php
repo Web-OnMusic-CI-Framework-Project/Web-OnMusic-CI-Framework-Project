@@ -64,7 +64,7 @@
                     <div class="text-right font-weight-bold pt-2 pr-5 pb-2">
                         Jumlah Hari : <?php echo $total_day ?>
                     </div>
-                    <?php $totalPayment = $total_day * $total_harga ?>
+                    <?php $totalPayment = $total_harga ?>
                     <div class="text-right font-weight-bold pt-2 pr-5 pb-4">
                         Total Payment : Rp<?php echo number_format($totalPayment, 0, ',', '.')?>
                     </div>

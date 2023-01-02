@@ -13,7 +13,7 @@ class Data_Property_Music extends CI_Controller
 
     public function add_property_music()
     {
-        $data['alatmusikjasa'] = $this->model_alat_musik->get_data('alatmusikjasa')->result();
+        $data['alatmusikjasa'] = $this->Model_Alat_Musik->get_data('alatmusikjasa')->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/data_property_music_add_property', $data);
@@ -122,19 +122,68 @@ class Data_Property_Music extends CI_Controller
         }
     }
 
+    // public function update_property($id)
+    // {
+    //     $where = array('id_alat_musik_jasa' => $id);
+    //     $data['alatmusikjasa'] = $this->db->query("SELECT * FROM alatmusikjasa WHERE id_alat_musik_jasa='$id'")->result();
+    //     $this->load->view('templates_admin/header');
+    //     $this->load->view('templates_admin/sidebar');
+    //     $this->load->view('admin/data_property_update', $data);
+    //     $this->load->view('templates_admin/footer');
+    // }
+
+    // public function update_property_action($id)
+    // {
+    //     $this->_rules();
+
+    //     if ($this->form_validation->run() == FALSE) {
+    //         $this->update_property($id);
+    //     } else {
+    //         $id_alat_musik_jasa  = $this->input->post('id_alat_musik_jsa');
+    //         $Nama                = $this->input->post('Nama');
+    //         $Brand               = $this->input->post('Brand');
+    //         $HargaSewa           = $this->input->post('HargaSewa');
+    //         $Status              = $this->input->post('Status');
+    //         $Gambar              = $this->input->post('Gambar');
+    //         $kode_type           = $this->input->post('kode_type');
+
+
+    //         $data = array(
+    //             'Nama' => $Nama,
+    //             'Brand' => $Brand,
+    //             'HargaSewa' => $HargaSewa,
+    //             'Status' => $Status,
+    //             'Gambar' => $Gambar,
+    //             'kode_type' => $kode_type,
+    //         );
+
+    //         $where = array(
+    //             'id_alat_musik_jasa' => $id_alat_musik_jasa
+    //         );
+
+    //         $this->model_alat_musik->update_data('alatmusikjasa', $data, $where);
+    //         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    //         Data Type Berhasil Diupdate!.
+    //         <button type="butoon" class="close" data-dismiss="alert" aria-label="Close">
+    //         <span aria-hidden="true">&times;</span>
+    //         </div>');
+    //         redirect('admin/data_property_music');
+    //     }
+    // }
+
     public function _rules()
     {
         $this->form_validation->set_rules('Nama', 'Nama', 'required');
-        $this->form_validation->set_rules('Brand', ',Merk', 'required');
+        $this->form_validation->set_rules('Brand', 'Merk', 'required');
         $this->form_validation->set_rules('HargaSewa', 'Price Rent', 'required');
         $this->form_validation->set_rules('Status', 'Status', 'required');
-        $this->form_validation->set_rules('Gambar', 'Gambar', 'required');
+        // $this->form_validation->set_rules('Gambar', 'Gambar', 'required');
     }
 
     public function detail_property($id)
     {
         $data['detail'] = $this->model_alat_musik->ambil_id($id);
-        $data['back_to_transaction'] = $this->input->post('back-to-transaction');
+        // $data['back_to_transaction'] = $this->input->post('back-to-transaction');
 
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
