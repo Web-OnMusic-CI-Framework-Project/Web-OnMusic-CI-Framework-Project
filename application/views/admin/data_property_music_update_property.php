@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <?php foreach ($alatmusikjasa as $amj) : ?>
-                    <form method="POST" action="<?php echo base_url('admin/data_property_music/update_property_music') ?>" enctype="multipart/form-data">
+                    <form method="POST" action="<?php echo base_url('admin/data_property_music/update_data_aksi/') . $amj->id_alat_musik_jasa ?>" enctype="multipart/form-data">
                         <div class="form-group">
                             <label class="font-weight-bold" for="Nama">Name</label>
                             <input type="text" class="form-control" name="Nama" value="<?php echo $amj->Nama ?>">
