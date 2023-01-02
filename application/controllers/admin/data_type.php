@@ -12,10 +12,9 @@ class Data_Type extends CI_Controller
 
     public function tambah_type()
     {
-        $data['type'] = $this->model_alat_musik->get_data('type')->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
-        $this->load->view('admin/form_tambah_type', $data);
+        $this->load->view('admin/form_tambah_type');
         $this->load->view('templates_admin/footer');
     }
 
@@ -34,7 +33,7 @@ class Data_Type extends CI_Controller
                 'nama_type'             => $nama_type,
             );
 
-            $this->model_alat_musik->insert_data($data, 'type');
+            $this->model_alat_musik->insert_data('type', $data);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
             Data Type Berhasil Ditambahkan!.
             <button type="butoon" class="close" data-dismiss="alert" aria-label="Close">

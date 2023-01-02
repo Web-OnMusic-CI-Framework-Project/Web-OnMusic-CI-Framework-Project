@@ -13,7 +13,7 @@ class Data_Property_Music extends CI_Controller
 
     public function add_property_music()
     {
-        $data['alatmusikjasa'] = $this->model_alat_musik->get_data('alatmusikjasa')->result();
+        $data['alatmusikjasa'] = $this->Model_Alat_Musik->get_data('alatmusikjasa')->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/data_property_music_add_property', $data);
@@ -174,7 +174,7 @@ class Data_Property_Music extends CI_Controller
     public function _rules()
     {
         $this->form_validation->set_rules('Nama', 'Nama', 'required');
-        $this->form_validation->set_rules('Brand', ',Merk', 'required');
+        $this->form_validation->set_rules('Brand', 'Merk', 'required');
         $this->form_validation->set_rules('HargaSewa', 'Price Rent', 'required');
         $this->form_validation->set_rules('Status', 'Status', 'required');
         // $this->form_validation->set_rules('Gambar', 'Gambar', 'required');
@@ -183,7 +183,7 @@ class Data_Property_Music extends CI_Controller
     public function detail_property($id)
     {
         $data['detail'] = $this->model_alat_musik->ambil_id($id);
-        $data['back_to_transaction'] = $this->input->post('back-to-transaction');
+        // $data['back_to_transaction'] = $this->input->post('back-to-transaction');
 
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
